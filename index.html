@@ -124,13 +124,15 @@ btn.onclick = () => {
 };
 
 // 👉 Tự mở sau 5s (CHỈ 1 LẦN)
-if(!localStorage.getItem("ai_opened")){
-  setTimeout(()=>{
-    chat.style.display="block";
-    localStorage.setItem("ai_opened","yes");
-  },5000);
-}
-</script>
+<script>
+const btn = document.getElementById("ai-btn");
+const chat = document.getElementById("chat-box");
 
+btn.onclick = () => {
+  chat.style.display =
+    chat.style.display === "block" ? "none" : "block";
+};
+</script>
 </body>
 </html>
+
