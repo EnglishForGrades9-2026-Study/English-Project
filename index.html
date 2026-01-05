@@ -2,22 +2,38 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Học Tiếng Anh với AI</title>
+<title>Học Tiếng Anh cùng AI</title>
 
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  line-height: 1.6;
 }
 
-/* Nội dung web */
-.content {
-  padding: 40px;
-  height: 2000px;
+/* Header */
+header {
+  background: #4f46e5;
+  color: white;
+  padding: 20px;
 }
 
-/* Nút AI */
+/* Menu */
+nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Nội dung */
+main {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Nút AI nổi */
 #ai-btn {
   position: fixed;
   bottom: 20px;
@@ -25,7 +41,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #4f46e5;
+  background: #22c55e;
   color: white;
   font-size: 28px;
   display: flex;
@@ -41,8 +57,8 @@ body {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 350px;
-  height: 480px;
+  width: 360px;
+  height: 500px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -55,18 +71,40 @@ body {
 
 <body>
 
-<div class="content">
-  <h1>📘 Website học tiếng Anh</h1>
-  <p>Học từ vựng, ngữ pháp và luyện hội thoại cùng AI.</p>
-  <p>Cuộn trang để kiểm tra chat nổi 👇</p>
-</div>
+<header>
+  <h1>📘 Học Tiếng Anh cùng AI</h1>
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#">Từ vựng</a>
+    <a href="#">Ngữ pháp</a>
+    <a href="#">Luyện nói</a>
+  </nav>
+</header>
 
-<!-- Khung chat AI -->
+<main>
+  <h2>Chào mừng bạn 👋</h2>
+  <p>Website giúp bạn học tiếng Anh hiệu quả với sự hỗ trợ của AI.</p>
+
+  <h3>📌 Nội dung học</h3>
+  <ul>
+    <li>Từ vựng theo chủ đề</li>
+    <li>Ngữ pháp cơ bản → nâng cao</li>
+    <li>Luyện hội thoại</li>
+  </ul>
+
+  <p>👉 Nhấn vào biểu tượng 🤖 để hỏi AI bất cứ lúc nào.</p>
+
+  <p style="margin-top:800px">
+    (Cuộn trang để kiểm tra chat nổi)
+  </p>
+</main>
+
+<!-- Khung chat -->
 <div id="chat-box">
-  <iframe 
-    src="https://quan0512-hoang.github.io/Chat-AI/chat.html"
-    width="100%" 
-    height="100%" 
+  <iframe
+    src="chat.html"
+    width="100%"
+    height="100%"
     frameborder="0">
   </iframe>
 </div>
