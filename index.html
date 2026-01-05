@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Chat AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Học Tiếng Anh với AI</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 200vh;
-      background: #f5f7fb;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background: #4f46e5;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+/* Nội dung web */
+.content {
+  padding: 40px;
+  height: 2000px;
+}
 
-    main {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* Nút AI */
+#ai-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
 
-    h2 {
-      color: #333;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-  </style>
+/* Khung chat */
+#chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 480px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>🤖 Chat AI</h1>
-    <p>Website Chat AI miễn phí</p>
-  </header>
+<div class="content">
+  <h1>📘 Website học tiếng Anh</h1>
+  <p>Học từ vựng, ngữ pháp và luyện hội thoại cùng AI.</p>
+  <p>Cuộn trang để kiểm tra chat nổi 👇</p>
+</div>
 
-  <main>
-    <h2>Giới thiệu</h2>
-    <p>
-      Đây là website Chat AI do tôi tạo bằng HTML và GitHub Pages.
-      Khi bạn lướt trang, khung chat AI sẽ luôn đứng cố định ở góc màn hình.
-    </p>
+<!-- Khung chat AI -->
+<div id="chat-box">
+  <iframe 
+    src="https://quan0512-hoang.github.io/Chat-AI/chat.html"
+    width="100%" 
+    height="100%" 
+    frameborder="0">
+  </iframe>
+</div>
 
-    <h2>Cách sử dụng</h2>
-    <p>
-      Nhấn vào biểu tượng chat ở góc dưới bên phải để trò chuyện với AI.
-    </p>
+<!-- Nút AI -->
+<div id="ai-btn">🤖</div>
 
-    <h2>Nội dung mẫu</h2>
-    <p>
-      Bạn có thể kéo xuống để kiểm tra chat AI có bám theo màn hình hay không.
-    </p>
-  </main>
+<script>
+const btn = document.getElementById("ai-btn");
+const chat = document.getElementById("chat-box");
 
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/69590c9079755a1983139251/1je1ti581';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+btn.onclick = () => {
+  chat.style.display =
+    chat.style.display === "none" || chat.style.display === ""
+    ? "block"
+    : "none";
+};
+</script>
 
 </body>
 </html>
