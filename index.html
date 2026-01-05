@@ -3,68 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Học Tiếng Anh cùng AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
+body{
   font-family: Arial, sans-serif;
-  margin: 0;
-  line-height: 1.6;
+  margin:0;
+  line-height:1.6;
 }
 
 /* Header */
-header {
-  background: #4f46e5;
-  color: white;
-  padding: 20px;
+header{
+  background:#4f46e5;
+  color:white;
+  padding:20px;
 }
-
-/* Menu */
-nav a {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
-  font-weight: bold;
+nav a{
+  color:white;
+  margin-right:15px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* Nội dung */
-main {
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
+main{
+  max-width:900px;
+  margin:auto;
+  padding:30px;
 }
 
-/* Nút AI nổi */
-#ai-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #22c55e;
-  color: white;
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  z-index: 9999;
+/* Nút AI */
+#ai-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#22c55e;
+  color:white;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
+  z-index:9999;
 }
 
 /* Khung chat */
-#chat-box {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 360px;
-  height: 500px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  display: none;
-  z-index: 9999;
-  overflow: hidden;
+#chat-box{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:360px;
+  height:500px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  display:none;
+  z-index:9999;
+  overflow:hidden;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  #chat-box{
+    width:100%;
+    height:100%;
+    right:0;
+    bottom:0;
+    border-radius:0;
+  }
 }
 </style>
 </head>
@@ -74,7 +84,7 @@ main {
 <header>
   <h1>📘 Học Tiếng Anh cùng AI</h1>
   <nav>
-    <a href="#">Trang chủ</a>
+    <a href="index.html">Trang chủ</a>
     <a href="#">Từ vựng</a>
     <a href="#">Ngữ pháp</a>
     <a href="#">Luyện nói</a>
@@ -83,30 +93,22 @@ main {
 
 <main>
   <h2>Chào mừng bạn 👋</h2>
-  <p>Website giúp bạn học tiếng Anh hiệu quả với sự hỗ trợ của AI.</p>
+  <p>Học tiếng Anh nhanh hơn với AI hỗ trợ 24/7.</p>
 
-  <h3>📌 Nội dung học</h3>
   <ul>
     <li>Từ vựng theo chủ đề</li>
-    <li>Ngữ pháp cơ bản → nâng cao</li>
-    <li>Luyện hội thoại</li>
+    <li>Ngữ pháp từ cơ bản → nâng cao</li>
+    <li>Luyện hội thoại thực tế</li>
   </ul>
 
-  <p>👉 Nhấn vào biểu tượng 🤖 để hỏi AI bất cứ lúc nào.</p>
-
-  <p style="margin-top:800px">
-    (Cuộn trang để kiểm tra chat nổi)
+  <p style="margin-top:900px">
+    (Cuộn để test chat nổi)
   </p>
 </main>
 
-<!-- Khung chat -->
+<!-- Chat -->
 <div id="chat-box">
-  <iframe
-    src="chat.html"
-    width="100%"
-    height="100%"
-    frameborder="0">
-  </iframe>
+  <iframe src="chat.html" width="100%" height="100%" frameborder="0"></iframe>
 </div>
 
 <!-- Nút AI -->
@@ -116,12 +118,18 @@ main {
 const btn = document.getElementById("ai-btn");
 const chat = document.getElementById("chat-box");
 
+// Mở / đóng thủ công
 btn.onclick = () => {
-  chat.style.display =
-    chat.style.display === "none" || chat.style.display === ""
-    ? "block"
-    : "none";
+  chat.style.display = chat.style.display === "block" ? "none" : "block";
 };
+
+// 👉 Tự mở sau 5s (CHỈ 1 LẦN)
+if(!localStorage.getItem("ai_opened")){
+  setTimeout(()=>{
+    chat.style.display="block";
+    localStorage.setItem("ai_opened","yes");
+  },5000);
+}
 </script>
 
 </body>
