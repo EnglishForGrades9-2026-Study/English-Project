@@ -1,41 +1,50 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f4f6;
+  background: #000;
+  color: #fff;
+  font-family: Arial;
+  margin: 0;
 }
 
-/* HEADER */
-.top {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 30px;
-    background: #111827;
-    color: white;
+.title {
+  text-align: center;
+  margin: 40px 0;
 }
 
-/* LOGO */
-.logo {
-    width: 50px;
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
 }
 
-/* SECTION */
-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
+.card {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 
-/* ẢNH */
-.banner {
-    width: 100%;
-    border-radius: 10px;
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-/* VIDEO */
-video {
-    width: 100%;
-    border-radius: 10px;
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
 }
