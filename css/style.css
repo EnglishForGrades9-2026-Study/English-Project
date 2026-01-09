@@ -33,8 +33,14 @@ body {
 button {
   margin-top: 10px;
   padding: 10px 20px;
+  background: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #ddd;
 }
 
 .videos {
