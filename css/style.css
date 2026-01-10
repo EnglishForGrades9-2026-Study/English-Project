@@ -76,7 +76,6 @@ body {
   font-family: 'Inter', 'Poppins', sans-serif;
 }
 
-/* DÒNG TIÊU ĐỀ */
 .cap-title {
   padding: 6px 10px;
   margin-bottom: 6px;
@@ -89,14 +88,12 @@ body {
   cursor: pointer;
 }
 
-/* hover tiêu đề */
 .cap-title:hover {
   background: linear-gradient(135deg, #0ea5e9, #0369a1);
   transform: translateX(6px);
   box-shadow: 0 8px 20px rgba(14,165,233,0.6);
 }
 
-/* DÒNG MÔ TẢ */
 .cap-desc {
   padding: 6px 10px;
   font-size: 14px;
@@ -108,14 +105,12 @@ body {
   cursor: pointer;
 }
 
-/* hover mô tả */
 .cap-desc:hover {
   background: linear-gradient(135deg, #38bdf8, #0284c7);
   transform: translateX(6px);
   box-shadow: 0 8px 20px rgba(56,189,248,0.6);
 }
 
-/* KHUNG SKILL / GRAMMAR / WRITING */
 .skills .card {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 18px;
@@ -127,7 +122,6 @@ body {
   overflow: hidden;
 }
 
-/* ánh sáng lướt */
 .skills .card::before {
   content: "";
   position: absolute;
@@ -142,7 +136,6 @@ body {
   transition: transform 0.6s ease;
 }
 
-/* HOVER → XANH BIỂN */
 .skills .card:hover {
   transform: translateY(-12px) scale(1.03);
   background: linear-gradient(
@@ -155,12 +148,10 @@ body {
     0 30px 60px rgba(14,165,233,0.6);
 }
 
-/* ánh sáng chạy */
 .skills .card:hover::before {
   transform: translate(120%, 120%) rotate(25deg);
 }
 
-/* ảnh */
 .skills .card img {
   transition: transform 0.4s ease;
 }
@@ -169,7 +160,6 @@ body {
   transform: scale(1.08);
 }
 
-/* nút */
 .skills .card .btn {
   transition: all 0.3s ease;
 }
@@ -241,12 +231,11 @@ audio {
   z-index: 9999;
 }
 
-/* ICON */
 .timer-icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
   font-size: 22px;
 
@@ -258,7 +247,6 @@ audio {
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* PANEL TIMER (ẨN HOÀN TOÀN) */
 .timer-panel {
   position: absolute;
   top: 0;
@@ -271,21 +259,19 @@ audio {
   padding: 18px;
   border-radius: 16px;
 
-  transform: translateX(110%);
+  transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
 
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-/* HOVER ICON → PANEL TRƯỢT RA */
 .timer-wrapper:hover .timer-panel {
   transform: translateX(-270px);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* STYLE BÊN TRONG */
 .timer-panel input,
 .timer-panel button {
   width: 100%;
@@ -297,18 +283,3 @@ audio {
   font-size: 26px;
   margin: 10px 0;
 }
-
-.timer-tab {
-  position: absolute;
-  left: -36px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 60px;
-  background: linear-gradient(135deg,#00c6ff,#0072ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px 0 0 12px;
-}
-
