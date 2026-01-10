@@ -47,20 +47,19 @@
   }
 </script>
 
-<div class="timer-box">⏱️</div>
-  <h3>⏱️ Stud  y Timer</h3>
+<div class="timer-box">
+  <div class="timer-tab">⏱️</div>
 
-  <input type="number" id="minutes" placeholder="Số phút (vd: 25)" min="1">
+  <h3>🎧 Study Timer</h3>
 
+  <input type="number" id="minutes" placeholder="Số phút (vd: 25)">
   <input type="text" id="message" placeholder="Lời nhắn khi hết giờ">
 
-  <div class="time-display" id="timeDisplay">00:00</div>
+  <div class="time-display" id="time">00:00</div>
 
-  <div class="timer-buttons">
-    <button onclick="startTimer()">Start</button>
-    <button onclick="pauseTimer()">Pause</button>
-    <button onclick="resetTimer()">Reset</button>
-  </div>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="resetTimer()">Reset</button>
 </div>
 
 <script>
@@ -235,6 +234,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
