@@ -338,25 +338,33 @@ audio {
   text-align: center;
   font-size: 100px;
   font-weight: 800;
+  text-align: center;
 }
 
 .holo-text {
   display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 1px;
 
-  background: linear-gradient(
-    120deg,
-    #00f0ff,
-    #7c7cff,
-    #ff6ec7,
-    #00f0ff
+ background: linear-gradient(
+    90deg,
+    #00eaff,
+    #4facfe,
+    #a18cd1,
+    #00eaff
   );
-  background-size: 300% 300%;
+ background-size: 200%;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 0 10px rgba(0,255,255,0.4);
-  transition: all 0.4s ease;
+  text-shadow: 0 0 1px rgba(255,255,255,0.6);
+  filter: none;
+  opacity: 1;
+  transition: background-position 0.4s ease;
+  -webkit-text-stroke: 0.6px rgba(255,255,255,0.35);
 }
 
 /* HOVER */
