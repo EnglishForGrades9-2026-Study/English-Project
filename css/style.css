@@ -193,58 +193,44 @@ body {
   z-index: 999;
 }
 
-.music-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: white;
-  font-size: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
-  z-index: 9999;
-
-  box-shadow: 0 8px 20px rgba(0, 120, 255, 0.5);
-  transition: all 0.3s ease;
+audio {
+  display: none;
 }
 
-/* hover giống nút chat */
-.music-toggle:hover {
-  transform: scale(1.12);
-  box-shadow: 0 12px 28px rgba(0, 120, 255, 0.8);
+.music-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
 }
 
 .music-label {
   position: fixed;
-  top: 30px;
-  left: 80px;
-
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-
-  font-size: 14px;
-  font-family: Poppins, sans-serif;
-
+  top: 65px;
+  left: 15px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
   opacity: 0;
-  transform: translateX(-10px);
-  transition: 0.3s ease;
-
-  pointer-events: none;
+  transition: 0.3s;
 }
 
-/* khi đang phát nhạc */
 .music-label.show {
   opacity: 1;
-  transform: translateX(0);
 }
+
+.music-select {
+  position: fixed;
+  top: 110px;
+  left: 15px;
+  z-index: 9999;
+}
+
