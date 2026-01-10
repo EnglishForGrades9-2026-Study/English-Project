@@ -70,13 +70,14 @@ body {
   margin-top: 8px;
   font-size: 14px;
   color: #ccc;
-}
-.skill-card {
-  background-color: rgba(0,0,0,0.6);
-  transition: all 0.3s ease;
+{
+
+  .skill {
+  background-color: red !important;
 }
 
-.skill-card:hover {
-  background-color: rgba(0, 120, 255, 0.6);
-  transform: translateY(-5px);
+.skill:hover {
+  background-color: blue !important;
+  transform: translateY(-10px);
 }
+
