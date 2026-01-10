@@ -183,3 +183,12 @@ body {
   background-color: #ffffff;
   color: #0078ff;
 }
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 12px;
+  z-index: 999;
+}
