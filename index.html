@@ -22,15 +22,33 @@
   <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
 </audio>
   
-  <script>
-  const audio = document.getElementById("audio");
-  audio.src = "music/Lofi-Chill.mp3"; // bài mặc định
+<script>
+  const music = document.getElementById("bg-music");
+  const btn = document.querySelector(".music-toggle");
+  let isPlaying = false;
 
-  function changeSong(src) {
-    audio.src = src;
-    audio.play();
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      btn.textContent = "🎵";
+    } else {
+      music.play();
+      btn.textContent = "⏸️";
+    }
+    isPlaying = !isPlaying;
   }
-</script>  
+</script>
+
+  <!-- NÚT NHẠC -->
+<div class="music-toggle" onclick="toggleMusic()">
+  🎵
+</div>
+
+<!-- AUDIO (ẩn đi) -->
+<audio id="bg-music" loop>
+  <source src="music/lofi1.mp3" type="audio/mpeg">
+</audio>
+
   
   <style>
   .main-title {
@@ -148,6 +166,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
