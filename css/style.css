@@ -62,6 +62,10 @@ body {
   border-radius: 8px;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .caption {
   margin-top: 8px;
   font-size: 14px;
