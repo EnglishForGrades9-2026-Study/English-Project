@@ -8,54 +8,44 @@
 </head>
 <body>
 
-<div class="music-player">
-  <audio id="audio" controls></audio>
+<!-- NÚT NHẠC -->
+<div class="music-toggle" onclick="toggleMusic()">🎵</div>
+<div class="music-label" id="musicLabel">Lo-fi học bài</div>
 
-  <select onchange="changeSong(this.value)">
-    <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
-    <option value="music/Truyền Động Lực.mp3">Truyền Động Lực Học Tập</option>
-    <option value="music/EDM-China.mp3">Thư Giãn</option>
-  </select>
-</div>
+<!-- AUDIO (ẨN HOÀN TOÀN) -->
+<audio id="bg-music" loop></audio>
+
+<!-- CHỌN NHẠC -->
+<select class="music-select" onchange="changeSong(this.value)">
+  <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
+  <option value="music/Truyen-Dong-Luc.mp3">Truyền động lực</option>
+  <option value="music/EDM-China.mp3">Thư giãn</option>
+</select>
   
 <script>
   const music = document.getElementById("bg-music");
-  const btn = document.querySelector(".music-toggle");
   const label = document.getElementById("musicLabel");
-
   let isPlaying = false;
 
   function toggleMusic() {
     if (isPlaying) {
       music.pause();
-      btn.textContent = "🎵";
       label.classList.remove("show");
     } else {
       music.play();
-      btn.textContent = "⏸️";
       label.classList.add("show");
     }
     isPlaying = !isPlaying;
   }
+
+  function changeSong(src) {
+    music.src = src;
+    music.play();
+    label.textContent = src.split("/").pop().replace(".mp3", "");
+    label.classList.add("show");
+    isPlaying = true;
+  }
 </script>
-
-<div class="music-toggle" onclick="toggleMusic()">🎵</div>
-<div class="music-label" id="musicLabel">Lo-fi Study</div>
-
-<audio id="bg-music" loop>
-  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
-</audio>
-
-  <!-- NÚT NHẠC -->
-<div class="music-toggle" onclick="toggleMusic()">
-  🎵
-</div>
-
-<!-- AUDIO (ẩn đi) -->
-<audio id="bg-music" loop>
-  <source src="music/lofi1.mp3" type="audio/mpeg">
-</audio>
-
   
   <style>
   .main-title {
@@ -173,6 +163,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
