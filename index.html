@@ -8,6 +8,30 @@
 </head>
 <body>
 
+<div class="music-player">
+  <audio id="audio" controls></audio>
+
+  <select onchange="changeSong(this.value)">
+    <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
+    <option value="music/Truyền Động Lực.mp3">Truyền Động Lực Học Tập</option>
+    <option value="music/EDM-China.mp3">Thư Giãn</option>
+  </select>
+</div>
+
+<audio controls>
+  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
+</audio>
+  
+  <script>
+  const audio = document.getElementById("audio");
+  audio.src = "music/Lofi-Chill.mp3"; // bài mặc định
+
+  function changeSong(src) {
+    audio.src = src;
+    audio.play();
+  }
+</script>  
+  
   <style>
   .main-title {
     background: linear-gradient(to right, #00ffcc, #00aaff);
@@ -31,31 +55,6 @@
 
   </style>
  
-  <div class="music-player">
-  <audio id="audio" controls></audio>
-
-  <select onchange="changeSong(this.value)">
-    <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
-    <option value="music/Truyền Động Lực.mp3">Truyền Động Lực Học Tập</option>
-    <option value="music/EDM-China.mp3">Thư Giãn</option>
-  </select>
-</div>
-
-<audio controls>
-  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
-</audio>
-  
-  <script>
-  const audio = document.getElementById("audio");
-  audio.src = "music/Lofi-Chill.mp3"; // bài mặc định
-
-  function changeSong(src) {
-    audio.src = src;
-    audio.play();
-  }
-</script>
-
-
 <h1 class="title">English For Grades 9</h1>
 
 <!-- PHẦN 3 KỸ NĂNG -->
@@ -149,6 +148,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
