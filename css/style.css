@@ -236,33 +236,63 @@ audio {
 
 .timer-box {
   position: fixed;
-  top: 120px;
-  right: -200px;
+  top: 140px;
+  right: 0;
+  z-index: 9999;
+}
 
-  width: 240px;
-  background: rgba(0,0,0,0.8);
+/* ICON ĐỒNG HỒ */
+.timer-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  color: white;
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* PHẦN NỘI DUNG (ẨN) */
+.timer-content {
+  position: absolute;
+  top: 0;
+  right: 60px;
+
+  width: 260px;
+  background: rgba(0,0,0,0.85);
   color: white;
 
   padding: 16px;
-  border-radius: 16px 0 0 16px;
-  z-index: 9999;
+  border-radius: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px);
 
-  transition: right 0.35s ease;
+  transition: all 0.35s ease;
 }
 
-.timer-box:hover {
-  right: 0;
+/* HOVER → HIỆN TIMER */
+.timer-box:hover .timer-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
-.timer-box input,
-.timer-box button {
+.timer-content input,
+.timer-content button {
   width: 100%;
   margin-top: 8px;
 }
 
 .time-display {
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   margin: 10px 0;
 }
 
