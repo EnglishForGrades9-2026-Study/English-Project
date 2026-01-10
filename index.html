@@ -41,6 +41,16 @@
 
   </style>
 
+  <script>
+  const audio = document.getElementById("audio");
+  audio.src = "music/Lofi-Chill.mp3"; // bài mặc định
+
+  function changeSong(src) {
+    audio.src = src;
+    audio.play();
+  }
+</script>
+
 
 <h1 class="title">English For Grades 9</h1>
 
@@ -135,6 +145,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
