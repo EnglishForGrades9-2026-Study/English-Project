@@ -237,64 +237,33 @@ audio {
 .timer-box {
   position: fixed;
   top: 120px;
-  right: -190px; /* ẨN BỚT */
+  right: -200px;
 
   width: 240px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.8);
   color: white;
 
   padding: 16px;
   border-radius: 16px 0 0 16px;
-  font-family: Poppins, sans-serif;
   z-index: 9999;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: right 0.35s ease;
 }
 
-/* khi di chuột vào */
 .timer-box:hover {
   right: 0;
 }
 
-.timer-box h3 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.timer-box input {
+.timer-box input,
+.timer-box button {
   width: 100%;
-  padding: 6px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
+  margin-top: 8px;
 }
 
 .time-display {
-  font-size: 32px;
   text-align: center;
+  font-size: 28px;
   margin: 10px 0;
-  font-weight: bold;
-}
-
-.timer-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.timer-buttons button {
-  flex: 1;
-  margin: 0 4px;
-  border: none;
-  border-radius: 8px;
-  padding: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.timer-buttons button:hover {
-  opacity: 0.8;
 }
 
 .timer-tab {
@@ -302,16 +271,12 @@ audio {
   left: -36px;
   top: 50%;
   transform: translateY(-50%);
-
   width: 36px;
   height: 60px;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: white;
-
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 12px 0 0 12px;
-  font-size: 20px;
 }
+
