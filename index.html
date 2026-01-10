@@ -17,27 +17,34 @@
     <option value="music/EDM-China.mp3">Thư Giãn</option>
   </select>
 </div>
-
-<audio controls>
-  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
-</audio>
   
 <script>
   const music = document.getElementById("bg-music");
   const btn = document.querySelector(".music-toggle");
+  const label = document.getElementById("musicLabel");
+
   let isPlaying = false;
 
   function toggleMusic() {
     if (isPlaying) {
       music.pause();
       btn.textContent = "🎵";
+      label.classList.remove("show");
     } else {
       music.play();
       btn.textContent = "⏸️";
+      label.classList.add("show");
     }
     isPlaying = !isPlaying;
   }
 </script>
+
+<div class="music-toggle" onclick="toggleMusic()">🎵</div>
+<div class="music-label" id="musicLabel">Lo-fi Study</div>
+
+<audio id="bg-music" loop>
+  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
+</audio>
 
   <!-- NÚT NHẠC -->
 <div class="music-toggle" onclick="toggleMusic()">
@@ -166,6 +173,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
