@@ -222,3 +222,29 @@ body {
   transform: scale(1.12);
   box-shadow: 0 12px 28px rgba(0, 120, 255, 0.8);
 }
+
+.music-label {
+  position: fixed;
+  top: 30px;
+  left: 80px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* khi đang phát nhạc */
+.music-label.show {
+  opacity: 1;
+  transform: translateX(0);
+}
