@@ -336,12 +336,10 @@ audio {
 
 .site-title {
   text-align: center;
-  font-size: 42px;
+  font-size: 100px;
   font-weight: 800;
-  background: black;
 }
 
-/* TEXT HOLOGRAPHIC */
 .holo-text {
   display: inline-block;
 
