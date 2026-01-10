@@ -72,8 +72,8 @@ body {
   color: #ccc;
 }
 
-/* CARD SKILL */
-.card {
+/* KHUNG SKILL / GRAMMAR / WRITING */
+.skills .card {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 18px;
   padding: 24px;
@@ -85,66 +85,55 @@ body {
 }
 
 /* ánh sáng lướt */
-.card::before {
+.skills .card::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  inset: -50%;
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.18),
     transparent
   );
   transform: rotate(25deg);
-  transition: 0.6s;
+  transition: transform 0.6s ease;
 }
 
-/* HOVER */
-/* KHUNG SKILL / GRAMMAR / WRITING */
-.skills .card {
-  background: #111;
-  transition: all 0.4s ease;
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-/* HOVER → CẢ KHUNG ĐỔI XANH BIỂN */
+/* HOVER → XANH BIỂN */
 .skills .card:hover {
-  border-color: rgba(255,255,255,0.8);
+  transform: translateY(-12px) scale(1.03);
   background: linear-gradient(
     135deg,
-    #0ea5e9,   /* xanh biển sáng */
-    #0369a1    /* xanh biển đậm */
-  );
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(14,165,233,0.6);
-}
-
+    #0ea5e9,
+    #0369a1
   );
   box-shadow:
-    0 0 0 2px rgba(255,255,255,0.6),
-    0 30px 60px rgba(37,99,235,0.6);
+    0 0 0 2px rgba(255,255,255,0.7),
+    0 30px 60px rgba(14,165,233,0.6);
 }
 
-.card:hover::before {
-  top: 100%;
-  left: 100%;
+/* ánh sáng chạy */
+.skills .card:hover::before {
+  transform: translate(120%, 120%) rotate(25deg);
 }
 
 /* ảnh */
-.card img {
+.skills .card img {
   transition: transform 0.4s ease;
 }
 
-.card:hover img {
+.skills .card:hover img {
   transform: scale(1.08);
 }
 
 /* nút */
-.card .btn {
+.skills .card .btn {
   transition: all 0.3s ease;
+}
+
+.skills .card:hover .btn {
+  background-color: #ffffff;
+  color: #0369a1;
 }
 
 .card:hover .btn {
