@@ -1,13 +1,9 @@
 body {
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.6),
-      rgba(0,0,0,0.6)
-    ),
-    url("../img/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: url("../img/background.jpg");
+  background-size: cover;        /* phủ kín */
+  background-position: center;   /* căn giữa */
+  background-repeat: no-repeat;  /* không lặp */
+  background-attachment: fixed;  /* cuộn không chạy */
   color: white;
 }
 
