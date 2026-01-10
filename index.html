@@ -29,6 +29,16 @@
       transform: translateY(-8px);
     }
 
+  <div class="music-player">
+  <audio id="audio" controls></audio>
+
+  <select onchange="changeSong(this.value)">
+    <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
+    <option value="music/Truyền Động Lực.mp3">Truyền Động Lực Học Tập</option>
+    <option value="music/EDM-China.mp3">Thư Giãn</option>
+  </select>
+</div>
+
   </style>
 
 
@@ -125,6 +135,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
