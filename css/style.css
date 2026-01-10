@@ -70,23 +70,21 @@ body {
   margin-top: 8px;
   font-size: 14px;
   color: #ccc;
-{
-
-  .skill {
-  background-color: red !important;
 }
+
 /* CARD SKILL */
 .card {
   background: rgba(0, 0, 0, 0.55);
   border-radius: 18px;
   padding: 24px;
+  text-align: center;
   transition: all 0.4s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
 }
 
-/* ánh sáng lướt qua */
+/* ánh sáng lướt */
 .card::before {
   content: "";
   position: absolute;
@@ -111,13 +109,12 @@ body {
   box-shadow: 0 25px 45px rgba(0, 120, 255, 0.45);
 }
 
-/* ánh sáng chạy */
 .card:hover::before {
   top: 100%;
   left: 100%;
 }
 
-/* ảnh phóng to nhẹ */
+/* ảnh */
 .card img {
   transition: transform 0.4s ease;
 }
@@ -135,4 +132,3 @@ body {
   background-color: #ffffff;
   color: #0078ff;
 }
-
