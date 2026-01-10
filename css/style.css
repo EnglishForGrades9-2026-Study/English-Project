@@ -192,3 +192,33 @@ body {
   border-radius: 12px;
   z-index: 999;
 }
+
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  box-shadow: 0 8px 20px rgba(0, 120, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* hover giống nút chat */
+.music-toggle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 28px rgba(0, 120, 255, 0.8);
+}
