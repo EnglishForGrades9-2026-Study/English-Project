@@ -180,9 +180,8 @@
     <div class="caption">
   <p class="cap-title">▶️ BÍ KÍP DIỆT GỌN TỪ VỰNG 9 LÊN 10 ✒️</p>
   <p class="cap-desc">
-    "Video này sẽ giúp bạn nắm trọn các mẹo ghi nhớ 
-           từ vựng siêu tốc mà không bị quên.
-      Xem xong là tự tin làm bài Vocabulary ngay!"
+    "Video này sẽ giúp bạn nắm trọn các mẹo ghi nhớ từ vựng siêu tốc, khoa học và cực kỳ hiệu quả, giúp học nhanh – nhớ lâu mà không lo bị quên hay nhầm lẫn.
+    Xem xong là tự tin làm bài Vocabulary ngay, áp dụng dễ dàng vào bài tập, bài kiểm tra và cả các kỳ thi quan trọng!"
   </p>
  </div>
 </div> 
@@ -192,9 +191,8 @@
    <div class="caption">
   <p class="cap-title">▶️ TỔNG ÔN NGỮ PHÁP "TRÚNG TỦ" 📖</p>
   <p class="cap-desc">
-   "Nắm chắc 12 thì cơ bản và các cấu trúc 
-    câu điều kiện, câu ước...giúp bạn giải quyết 80% bài tập
-    ngữ pháp trong đề thi chính thức."
+   "Nắm chắc 12 thì cơ bản cùng các cấu trúc ngữ pháp trọng tâm như câu điều kiện, câu ước, câu bị động, 
+    mệnh đề quan hệ… sẽ giúp bạn giải quyết nhanh gọn và chính xác đến 80% bài tập ngữ pháp trong đề thi chính thức, từ đó tăng điểm rõ rệt và tự tin hơn khi làm bài"
    </p>
  </div>
 </div>
@@ -243,7 +241,55 @@
     </div>
   </div>
 </div>
-  
+
+  <!-- NÚT HƯỚNG DẪN -->
+<div class="help-btn" onclick="toggleHelp()">❓</div>
+
+<!-- POPUP HƯỚNG DẪN -->
+<div class="help-overlay" id="helpOverlay">
+  <div class="help-box">
+    <span class="close-btn" onclick="toggleHelp()">✖</span>
+
+    <h2>📘 HƯỚNG DẪN SỬ DỤNG</h2>
+
+    <div class="help-section">
+      <h3>🎵 Nhạc Chill Để Học</h3>
+      <p>
+        • Chọn thể loại nhạc ở góc trên<br>
+        • Nhạc giúp tập trung khi học<br>
+        • Có thể đổi bài bất cứ lúc nào
+      </p>
+    </div>
+
+    <div class="help-section">
+      <h3>⏱️ Study Timer</h3>
+      <p>
+        • Nhập số phút (ví dụ: 25)<br>
+        • Bấm Start để bắt đầu<br>
+        • Khi hết giờ sẽ hiện lời nhắn
+      </p>
+    </div>
+
+    <div class="help-section">
+      <h3>📋 Nhiệm vụ học tập</h3>
+      <p>
+        • Hoàn thành từng nhiệm vụ trong ngày<br>
+        • Mỗi nhiệm vụ giúp rèn kỹ năng riêng<br>
+        • Xem như một thử thách game 🎮
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleHelp() {
+  const overlay = document.getElementById("helpOverlay");
+  overlay.style.display =
+    overlay.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -263,6 +309,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
