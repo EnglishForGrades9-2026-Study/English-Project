@@ -242,52 +242,46 @@
   </div>
 </div>
 
-  <!-- NÚT HƯỚNG DẪN -->
+<!-- HƯỚNG DẪN -->
+<div class="help-wrapper open" id="helpWrapper">
+<!-- ICON -->
 <div class="help-btn" onclick="toggleHelp()">❓</div>
-
-<!-- POPUP HƯỚNG DẪN -->
-<div class="help-overlay" id="helpOverlay">
-  <div class="help-box">
+<!-- PANEL -->
+<div class="help-box">
     <span class="close-btn" onclick="toggleHelp()">✖</span>
 
     <h2>📘 HƯỚNG DẪN SỬ DỤNG</h2>
 
     <div class="help-section">
-      <h3>🎵 Nhạc Chill Để Học</h3>
-      <p>
-        • Chọn thể loại nhạc ở góc trên<br>
-        • Nhạc giúp tập trung khi học<br>
-        • Có thể đổi bài bất cứ lúc nào
-      </p>
+      <h3>🎵 Nhạc học</h3>
+      <p>Chọn nhạc ở góc trên để học tập trung hơn.</p>
     </div>
 
     <div class="help-section">
       <h3>⏱️ Study Timer</h3>
-      <p>
-        • Nhập số phút (ví dụ: 25)<br>
-        • Bấm Start để bắt đầu<br>
-        • Khi hết giờ sẽ hiện lời nhắn
-      </p>
+      <p>Đặt thời gian (25 phút) → Start → học tập trung.</p>
     </div>
 
     <div class="help-section">
-      <h3>📋 Nhiệm vụ học tập</h3>
-      <p>
-        • Hoàn thành từng nhiệm vụ trong ngày<br>
-        • Mỗi nhiệm vụ giúp rèn kỹ năng riêng<br>
-        • Xem như một thử thách game 🎮
-      </p>
+      <h3>📋 Nhiệm vụ</h3>
+      <p>Hoàn thành nhiệm vụ mỗi ngày để nâng kỹ năng.</p>
     </div>
-
   </div>
 </div>
 
 <script>
+const help = document.getElementById("helpWrapper");
+
 function toggleHelp() {
-  const overlay = document.getElementById("helpOverlay");
-  overlay.style.display =
-    overlay.style.display === "flex" ? "none" : "flex";
+  help.classList.toggle("open");
 }
+
+// TỰ ĐỘNG HIỆN KHI VÀO WEB
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    help.classList.add("open");
+  }, 600); // hiện sau 0.6s cho mượt
+});
 </script>
 
 <!--Start of Tawk.to Script-->
@@ -309,6 +303,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
