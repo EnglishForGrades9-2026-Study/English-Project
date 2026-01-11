@@ -471,12 +471,13 @@ audio {
 
 .doc-wrapper {
   width: 100%;
-  height: calc(100vh - 80px); /* trừ header */
+  height: calc(100vh - 70px);
 }
 
-.doc-wrapper iframe {
+#studyFrame {
   width: 100%;
   height: 100%;
   border: none;
 }
+
 
