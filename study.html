@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Mode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<!-- NHẠC -->
+<audio id="bg-music" autoplay loop>
+  <source src="music/Lofi-Chill.mp3" type="audio/mpeg">
+</audio>
+
+<!-- THANH TRÊN -->
+<div class="study-header">
+  <button onclick="goHome()">⬅ Trang chính</button>
+  <h2>📘 Study Mode</h2>
+</div>
+
+<!-- IFRAME NHÚNG WEB NGOÀI -->
+<div class="iframe-container">
+  <iframe 
+    src="https://docs.google.com/document/d/e/2PACX-1vTGBaXh1duKyvYFKJcN83V_IQLlo_qmMVdD5Y7wr6pDOzUXndBgTL8Ntj2QQJVJaIYTzwkEcEYFLy5K/pub"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
