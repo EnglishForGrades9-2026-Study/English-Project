@@ -13,42 +13,10 @@
   <h2>📘 Study Mode</h2>
 </div>
 
-<iframe id="studyFrame"></iframe> 
+<div class="doc-wrapper">
+  <iframe id="studyFrame"></iframe>
+</div>
   
-<script>
-  const frame = document.getElementById("studyFrame");
-  const params = new URLSearchParams(window.location.search);
-  const type = params.get("type");
-
-  if (type === "vocabulary") {
-   <div class="doc-wrapper">
-  <iframe 
-    src="https://docs.google.com/document/d/e/2PACX-1vTGBaXh1duKyvYFKJcN83V_IQLlo_qmMVdD5Y7wr6pDOzUXndBgTL8Ntj2QQJVJaIYTzwkEcEYFLy5K/pub?embedded=true">
-  </iframe>
-</div>
-  } 
-    
-  else if (type === "grammar") {
-    <div class="doc-wrapper">
-  <iframe 
-    src="https://docs.google.com/document/d/e/2PACX-1vRyJLuGQmWndcXFgAXZ9r8icwKNMYmy6Kb7XBfEjRQh6tJf_YNoH4EiNp4Gm_2li5JyXEtFzhk6kwhN/pub?embedded=true">
-  </iframe>
-</div>
-} 
-  
-  else if (type === "writing") {
-  <div class="doc-wrapper">
-  <iframe 
-    src="https://docs.google.com/document/d/e/2PACX-1vTEKqG7SMo79PDVV_FdzAH1BUbg6AXqkvSJM5zZwpCNSsoB005pw6MqvS2fswU9JuVlyHjwyzTQtkZx/pub?embedded=true">
-  </iframe>
-</div>
-} 
-
-  else {
-    frame.src = "https://google.com"; // dự phòng
-  }
-</script>
-
   <script src="js/main.js"></script>
 </body>
 </html>
