@@ -2,113 +2,44 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>English Grade 9</title>
+<title>TEST 3 KHỐI</title>
 
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b0b0b;
-  color:white;
+  background:#111;
+  font-family:Arial;
 }
 
-.wrapper{
+.wrap{
   display:flex;
-  justify-content:center;
   gap:30px;
-  padding:60px 20px;
-  flex-wrap:wrap;
+  padding:60px;
+  justify-content:center;
 }
 
-/* CARD */
-.skill{
-  width:320px;
-  height:420px;
-  position:relative;
-  border-radius:20px;
-  overflow:hidden;
-  background-size:cover;
-  background-position:center;
-}
-
-/* LỚP PHỦ TỐI */
-.skill::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-}
-
-/* NỘI DUNG */
-.skill-content{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:25px;
-}
-
-.skill h2{
-  margin:0;
-  font-size:22px;
-}
-
-.skill p{
-  font-size:14px;
-  opacity:.85;
-  margin:8px 0 15px;
-}
-
-.skill button{
-  align-self:flex-start;
-  padding:10px 22px;
-  border:none;
-  border-radius:20px;
-  background:#222;
+.box{
+  width:300px;
+  height:300px;
   color:white;
-  cursor:pointer;
+  font-size:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:20px;
 }
-
-.skill button:hover{
-  background:#00eaff;
-  color:black;
-}
+.box1{background:red;}
+.box2{background:green;}
+.box3{background:blue;}
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-
-  <!-- VOCABULARY -->
-  <div class="skill" style="background-image:url('img/vocab.jpg')">
-    <div class="skill-content">
-      <h2>SKILL 1: VOCABULARY</h2>
-      <p>Làm chủ từ vựng cốt lõi lớp 9</p>
-      <button>Vocabulary – Let’s Study</button>
-    </div>
-  </div>
-
-  <!-- GRAMMAR -->
-  <div class="skill" style="background-image:url('img/grammar.jpg')">
-    <div class="skill-content">
-      <h2>SKILL 2: GRAMMAR</h2>
-      <p>Nắm vững cấu trúc ngữ pháp</p>
-      <button>Grammar – Let’s Study</button>
-    </div>
-  </div>
-
-  <!-- WRITING -->
-  <div class="skill" style="background-image:url('img/writing.jpg')">
-    <div class="skill-content">
-      <h2>SKILL 3: WRITING</h2>
-      <p>Viết đúng – viết hay</p>
-      <button>Writing – Let’s Study</button>
-    </div>
-  </div>
-
+<div class="wrap">
+  <div class="box box1">VOCABULARY</div>
+  <div class="box box2">GRAMMAR</div>
+  <div class="box box3">WRITING</div>
 </div>
 
 </body>
