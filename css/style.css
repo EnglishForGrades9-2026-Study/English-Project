@@ -548,3 +548,15 @@ body{
   line-height:1.6;
 }
 
+.mindmap{
+  display:none;
+  background:#111;
+  color:white;
+  padding:20px;
+  margin:20px auto;
+  width:80%;
+  border-radius:15px;
+}
+.mindmap.active{
+  display:block;
+}
