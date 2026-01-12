@@ -52,6 +52,29 @@
   }
 </script>
 
+  intro
+  <div class="video-intro">
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+
+  <button class="skip-btn" onclick="skipIntro()">Skip</button>
+</div>
+
+<script>
+  const video = document.getElementById("introVideo");
+
+  // Tự chuyển trang khi video kết thúc
+  video.onended = () => {
+    window.location.href = "home.html";
+  };
+
+  function skipIntro() {
+    window.location.href = "home.html";
+  }
+</script>
+
+  
 <div class="timer-box">
   <h3>⏱️ Study Timer</h3>
   <input type="number" id="minutes" placeholder="Số phút (vd: 25)" min="1">
@@ -348,6 +371,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
