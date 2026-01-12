@@ -3,59 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <title>English Grade 9</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0b0b0b;
+  color:white;
+}
+
+.wrapper{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:60px 20px;
+  flex-wrap:wrap;
+}
+
+/* CARD */
+.skill{
+  width:320px;
+  height:420px;
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+}
+
+/* LỚP PHỦ TỐI */
+.skill::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+/* NỘI DUNG */
+.skill-content{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:25px;
+}
+
+.skill h2{
+  margin:0;
+  font-size:22px;
+}
+
+.skill p{
+  font-size:14px;
+  opacity:.85;
+  margin:8px 0 15px;
+}
+
+.skill button{
+  align-self:flex-start;
+  padding:10px 22px;
+  border:none;
+  border-radius:20px;
+  background:#222;
+  color:white;
+  cursor:pointer;
+}
+
+.skill button:hover{
+  background:#00eaff;
+  color:black;
+}
+</style>
 </head>
 
 <body>
 
-<h1 class="title">English For Grade 9</h1>
-
-<div class="skills">
+<div class="wrapper">
 
   <!-- VOCABULARY -->
-  <div class="card">
-    <img src="img/vocab.jpg">
-    <h2>VOCABULARY</h2>
-    <p>
-      Environment – Education – Technology – Life in the Past
-    </p>
-    <div class="content">
-      <b>Mindmap:</b><br>
-      • pollution – recycle – global warming<br>
-      • compulsory – scholarship<br>
-      • invention – smartphone
+  <div class="skill" style="background-image:url('img/vocab.jpg')">
+    <div class="skill-content">
+      <h2>SKILL 1: VOCABULARY</h2>
+      <p>Làm chủ từ vựng cốt lõi lớp 9</p>
+      <button>Vocabulary – Let’s Study</button>
     </div>
   </div>
 
   <!-- GRAMMAR -->
-  <div class="card">
-    <img src="img/grammar.jpg">
-    <h2>GRAMMAR</h2>
-    <p>
-      Trọng tâm ngữ pháp lớp 9
-    </p>
-    <div class="content">
-      <b>Mindmap:</b><br>
-      • Past Simple – Present Perfect<br>
-      • Passive Voice<br>
-      • Conditional sentences<br>
-      • Relative clauses
+  <div class="skill" style="background-image:url('img/grammar.jpg')">
+    <div class="skill-content">
+      <h2>SKILL 2: GRAMMAR</h2>
+      <p>Nắm vững cấu trúc ngữ pháp</p>
+      <button>Grammar – Let’s Study</button>
     </div>
   </div>
 
   <!-- WRITING -->
-  <div class="card">
-    <img src="img/writing.jpg">
-    <h2>WRITING</h2>
-    <p>
-      Viết đúng – viết đủ ý
-    </p>
-    <div class="content">
-      <b>Mindmap:</b><br>
-      • Topic sentence<br>
-      • Supporting ideas<br>
-      • Conclusion<br>
-      • Linking words
+  <div class="skill" style="background-image:url('img/writing.jpg')">
+    <div class="skill-content">
+      <h2>SKILL 3: WRITING</h2>
+      <p>Viết đúng – viết hay</p>
+      <button>Writing – Let’s Study</button>
     </div>
   </div>
 
