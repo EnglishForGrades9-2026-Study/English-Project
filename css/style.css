@@ -1,4 +1,4 @@
-body {
+html, body {
   background-image: url("../img/background.jpg");
   background-size: cover;        /* phủ kín */
   background-position: center;   /* căn giữa */
@@ -479,6 +479,8 @@ khung ngang nhỏ
   padding: 16px;
   border-radius: 12px;
   text-align: center;
+  position: relative;
+  z-index: 20;
 }
 
 .small-card a {
