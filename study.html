@@ -3,19 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <title>Study Mode</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+    }
+
+    .study-header {
+      height: 60px;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .study-header button {
+      background: #0d6efd;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .doc-wrapper {
+      height: calc(100vh - 60px);
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <div class="study-header">
-  <button onclick="goHome()">⬅ Trang chính</button>
-  <h2>📘 Study Mode</h2>
+  <button onclick="location.href='index.html'">⬅ Trang chính</button>
+  <h2 id="title">📘 Study Mode</h2>
 </div>
 
-<!-- GOOGLE DOCS -->
-<iframe id="studyFrame"></iframe>
+<div class="doc-wrapper">
+  <iframe id="studyFrame"></iframe>
+</div>
 
-<script src="js/study.js"></script>
+<script>
+  const frame = document.getElementById("studyFrame");
+  const title = document.getElementById("title");
+
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get("type");
+
+  const docs = {
+    vocabulary: {
+      title: "📕 Vocabulary Study",
+      url: "https://docs.google.com/document/d/e/2PACX-1vTGBaXh1duKyvYFKJcN83V_IQLlo_qmMVdD5Y7wr6pDOzUXndBgTL8Ntj2QQJVJaIYTzwkEcEYFLy5K/pub?embedded=true"
+    },
+    grammar: {
+      title: "📘 Grammar Study",
+      url: "https://docs.google.com/document/d/e/2PACX-1vRyJLuGQmWndcXFgAXZ9r8icwKNMYmy6Kb7XBfEjRQh6tJf_YNoH4EiNp4Gm_2li5JyXEtFzhk6kwhN/pub?embedded=true"
+    },
+    writing: {
+      title: "✍ Writing Study",
+      url: "https://docs.google.com/document/d/e/2PACX-1vTEKqG7SMo79PDVV_FdzAH1BUbg6AXqkvSJM5zZwpCNSsoB005pw6MqvS2fswU9JuVlyHjwyzTQtkZx/pub?embedded=true"
+    }
+  };
+
+  if (docs[type]) {
+    title.textContent = docs[type].title;
+    frame.src = docs[type].url;
+  } else {
+    frame.src = "https://google.com";
+  }
+</script>
+
 </body>
 </html>
