@@ -478,15 +478,20 @@ html, body {
 .study-header {
   height: 60px;
   background: #111;
-  color: white;
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 0 20px;
 }
 
-#studyFrame {
+iframe#studyFrame {
+  position: fixed;
+  top: 60px;
+  left: 0;
   width: 100vw;
   height: calc(100vh - 60px);
   border: none;
+  background: white;
+  z-index: 999;
 }
