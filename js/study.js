@@ -1,17 +1,19 @@
-const frame = document.getElementById("studyFrame");
-const params = new URLSearchParams(window.location.search);
-const type = params.get("type");
+<body>
 
-const docs = {
-  vocabulary: "https://docs.google.com/document/d/e/2PACX-1vTGBaXh1duKyvYFKJcN83V_IQLlo_qmMVdD5Y7wr6pDOzUXndBgTL8Ntj2QQJVJaIYTzwkEcEYFLy5K/pub?embedded=true",
+<div class="study-header">
+  <button onclick="window.location.href='index.html'">⬅ Trang chính</button>
+  <h2>📘 Study Mode</h2>
+</div>
 
-  grammar: "https://docs.google.com/document/d/e/2PACX-1vRyJLuGQmWndcXFgAXZ9r8icwKNMYmy6Kb7XBfEjRQh6tJf_YNoH4EiNp4Gm_2li5JyXEtFzhk6kwhN/pub?embedded=true",
+<iframe id="studyFrame"></iframe>
 
-  writing: "https://docs.google.com/document/d/e/2PACX-1vTEKqG7SMo79PDVV_FdzAH1BUbg6AXqkvSJM5zZwpCNSsoB005pw6MqvS2fswU9JuVlyHjwyzTQtkZx/pub?embedded=true"
-};
+<script>
+  const frame = document.getElementById("studyFrame");
+  const type = new URLSearchParams(window.location.search).get("type");
 
-frame.src = docs[type] || "https://google.com";
+  if (type === "vocabulary") {
+    frame.src = "https://docs.google.com/document/d/e/2PACX-1vTGBaXh1duKyvYFKJcN83V_IQLlo_qmMVdD5Y7wr6pDOzUXndBgTL8Ntj2QQJVJaIYTzwkEcEYFLy5K/pub?embedded=true";
+  }
+</script>
 
-function goHome() {
-  window.location.href = "index.html";
-}
+</body>
