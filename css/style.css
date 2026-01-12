@@ -469,15 +469,24 @@ audio {
   margin-bottom: 6px;
 }
 
-.doc-wrapper {
-  width: 100%;
-  height: calc(100vh - 70px);
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.study-header {
+  height: 60px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
 }
 
 #studyFrame {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: calc(100vh - 60px);
   border: none;
 }
-
-
