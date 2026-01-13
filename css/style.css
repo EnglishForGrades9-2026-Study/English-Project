@@ -176,56 +176,56 @@ body {
   background-color: #ffffff;
   color: #0078ff;
 }
+
+/* 🎵 MUSIC PLAYER */
 .music-player {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(0,0,0,0.6);
-  padding: 10px;
-  border-radius: 12px;
-  z-index: 999;
-}
-
-audio {
-  display: none;
-}
-
-.music-toggle {
-  position: fixed;
   top: 20px;
-  left: 25px;
-  font-size: 22px;
-  background: rgba(131,192,216,0);
-  color: white;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+  left: 20px;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* ICON */
+.music-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* LABEL */
 .music-label {
-  position: fixed;
-  top: 70px;
-  left: 8px;
-  background: rgba(95,187,188,0.43);
-  color: #73e18c;
+  background: rgba(0,0,0,0.7);
+  color: white;
   padding: 6px 12px;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0;
+  transform: translateX(-10px);
   transition: 0.3s;
 }
 
 .music-label.show {
   opacity: 1;
+  transform: translateX(0);
 }
 
+/* SELECT */
 .music-select {
-  position: fixed;
-  top: 38px;
-  left: 109px;
-  z-index: 9999;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 6px;
 }
+
 
 .timer-wrapper {
   position: fixed;
