@@ -43,38 +43,8 @@
     isPlaying = !isPlaying;
   }
 
-  function changeSong(src) {
-    music.src = src;
-    music.play();
-    label.textContent = src.split("/").pop().replace(".mp3", "");
-    label.classList.add("show");
-    isPlaying = true;
-  }
-</script>
-
-  intro
-  <div class="video-intro">
-  <video id="introVideo" autoplay muted playsinline>
-    <source src="intro.mp4" type="video/mp4">
-  </video>
-
-  <button class="skip-btn" onclick="skipIntro()">Skip</button>
-</div>
-
-<script>
-  const video = document.getElementById("introVideo");
-
-  // Tự chuyển trang khi video kết thúc
-  video.onended = () => {
-    window.location.href = "home.html";
-  };
-
-  function skipIntro() {
-    window.location.href = "home.html";
-  }
-</script>
-
   
+  functigiờ -->
 <div class="timer-box">
   <h3>⏱️ Study Timer</h3>
   <input type="number" id="minutes" placeholder="Số phút (vd: 25)" min="1">
@@ -193,7 +163,7 @@
   </a>
  </div>
 </div>
-
+<!-- phần mindmap  -->
 <div class="small-cards">
 
   <div class="small-card">
@@ -254,7 +224,7 @@
  </div>
 </div>
 
-  khung mini
+  <!--phần mindmap -->
 <div class="mini-skills">
 
   <div class="mini-card">
@@ -279,6 +249,7 @@
     
 </div>
 
+  <!--nhiệm vụ hàng ngày -->
   <div class="daily-quest">
   <h2>📅 NHIỆM VỤ NGÀY 01: <span>THE AWAKENING</span></h2>
 
@@ -352,6 +323,22 @@ window.addEventListener("load", () => {
 });
 </script>
 
+  <!--âm thanh intro -->
+  <video id="introVideo" autoplay muted playsinline>
+  <source src="intro.mp4" type="video/mp4">
+</video>
+
+<button onclick="toggleSound()">🔊 Bật âm thanh</button>
+
+<script>
+  const video = document.getElementById("introVideo");
+
+  function toggleSound() {
+    video.muted = false;
+    video.volume = 1;
+  }
+</script>
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -371,6 +358,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
