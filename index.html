@@ -24,41 +24,7 @@
   <option value="music/Nhac-Tet.mp3">Nhạc Tết</option>
   <option value="music/Nhac-Chill-VN.mp3">Nhạc Tâm Trạng</option>
 </select>
-
-<script>
-  const music = document.getElementById("bg-music");
-  const label = document.getElementById("musicLabel");
-  let isPlaying = false;
-
-  window.toggleMusic = function () {
-    if (isPlaying) {
-      music.pause();
-      label.classList.remove("show");
-    } else {
-      music.play();
-      label.classList.add("show");
-      label.textContent = getSongName();
-    }
-    isPlaying = !isPlaying;
-  };
-
-  window.changeSong = function (src) {
-    music.src = src;
-    music.load();
-    music.play();
-
-    isPlaying = true;
-    label.classList.add("show");
-    label.textContent = getSongName();
-  };
-
-  function getSongName() {
-    const select = document.querySelector(".music-select");
-    return select.options[select.selectedIndex].text;
-  }
-</script>
-
-
+<script src="script.js"></script>
 
 <div class="timer-box">
   <h3>⏱️ Study Timer</h3>
@@ -398,6 +364,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
