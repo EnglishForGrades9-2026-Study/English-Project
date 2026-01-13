@@ -30,25 +30,34 @@
   const label = document.getElementById("musicLabel");
   let isPlaying = false;
 
-  function toggleMusic() {
+  window.toggleMusic = function () {
     if (isPlaying) {
       music.pause();
       label.classList.remove("show");
     } else {
       music.play();
       label.classList.add("show");
+      label.textContent = getSongName();
     }
     isPlaying = !isPlaying;
-  }
+  };
 
-  function changeSong(src) {
+  window.changeSong = function (src) {
     music.src = src;
     music.load();
     music.play();
+
     isPlaying = true;
     label.classList.add("show");
+    label.textContent = getSongName();
+  };
+
+  function getSongName() {
+    const select = document.querySelector(".music-select");
+    return select.options[select.selectedIndex].text;
   }
 </script>
+
 
 
 <div class="timer-box">
@@ -389,6 +398,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
