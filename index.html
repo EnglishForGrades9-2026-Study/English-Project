@@ -12,26 +12,24 @@
 <body>
 
  <!-- 🎵 MUSIC PLAYER -->
-<div class="music-player">
 
-  <!-- ICON -->
-  <button id="musicToggle" class="music-btn">🎵</button>
+  <!-- NÚT NHẠC -->
+<div class="music-toggle" id="musicToggle">🎵</div>
+<div class="music-label" id="musicLabel">Lo-fi học bài</div>
 
-  <!-- LABEL -->
-  <div id="musicLabel" class="music-label">Lo-fi học bài</div>
-
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="music/Lo-fi-Chill.mp3" type="audio/mpeg">
+</audio>
   <!-- SELECT -->
-  <select id="musicSelect" class="music-select">
+  <select class="music-select" id="musicSelect">
     <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
     <option value="music/Truyện Dộng Lực.mp3">Truyền động lực</option>
     <option value="music/EDM-China.mp3">Thư giãn</option>
     <option value="music/Nhạc Tết.mp3">Nhạc Tết</option>
     <option value="music/Nhạc Chill-VN.mp3">Nhạc Tâm Trạng</option>
     </select>
-   
-  <!-- AUDIO -->
-  <audio id="bgMusic" loop></audio>
-</div>
+  
 
   <script>
 const music = document.getElementById("bgMusic");
@@ -408,6 +406,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
