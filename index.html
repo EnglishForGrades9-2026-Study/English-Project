@@ -11,20 +11,28 @@
 </head>
 <body>
 
-  <!-- nhạc nền -->
-<div class="music-toggle" onclick="toggleMusic()">🎵</div>
-<div class="music-label" id="musicLabel">Lo-fi học bài</div>
+ <!-- 🎵 MUSIC PLAYER -->
+<div class="music-player">
 
-<audio id="bg-music" src="music/Lofi-Chill.mp3" loop></audio>
+  <!-- ICON -->
+  <button id="musicToggle" class="music-btn">🎵</button>
 
-<select class="music-select" onchange="changeSong(this.value)">
-  <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
-  <option value="music/Truyền Động Lực.mp3">Truyền động lực</option>
-  <option value="music/EDM-China.mp3">Thư giãn</option>
-  <option value="music/Nhac-Tet.mp3">Nhạc Tết</option>
-  <option value="music/Nhac-Chill-VN.mp3">Nhạc Tâm Trạng</option>
-</select>
-<script src="script.js"></script>
+  <!-- LABEL -->
+  <div id="musicLabel" class="music-label">Lo-fi học bài</div>
+
+  <!-- SELECT -->
+  <select id="musicSelect" class="music-select">
+    <option value="music/Lofi-Chill.mp3">Lo-fi học bài</option>
+    <option value="music/Truyện Dộng Lực.mp3">Truyền động lực</option>
+    <option value="music/EDM-China.mp3">Thư giãn</option>
+    <option value="music/Nhạc Tết.mp3">Nhạc Tết</option>
+    <option value="music/Nhạc Chill-VN.mp3">Nhạc Tâm Trạng</option>
+    </select>
+   <!-- AUDIO -->
+  <audio id="bgMusic" loop></audio>
+
+</div>
+
 
 <div class="timer-box">
   <h3>⏱️ Study Timer</h3>
@@ -364,6 +372,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
