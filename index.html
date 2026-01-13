@@ -28,12 +28,48 @@
     <option value="music/Nhạc Tết.mp3">Nhạc Tết</option>
     <option value="music/Nhạc Chill-VN.mp3">Nhạc Tâm Trạng</option>
     </select>
-   <!-- AUDIO -->
+   
+  <!-- AUDIO -->
   <audio id="bgMusic" loop></audio>
-
 </div>
 
+  <script>
+const music = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+const select = document.getElementById("musicSelect");
+const label = document.getElementById("musicLabel");
 
+let isPlaying = false;
+
+// bật / tắt nhạc
+toggleBtn.onclick = () => {
+  if (!music.src) {
+    music.src = select.value;
+  }
+
+  if (isPlaying) {
+    music.pause();
+    label.classList.remove("show");
+  } else {
+    music.play();
+    label.classList.add("show");
+  }
+
+  isPlaying = !isPlaying;
+};
+
+// đổi bài
+select.onchange = () => {
+  music.src = select.value;
+  music.play();
+  label.textContent = select.options[select.selectedIndex].text;
+  label.classList.add("show");
+  isPlaying = true;
+};
+</script>
+
+
+  <!-- đồng hồ báo thức -->
 <div class="timer-box">
   <h3>⏱️ Study Timer</h3>
   <input type="number" id="minutes" placeholder="Số phút (vd: 25)" min="1">
@@ -372,6 +408,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
