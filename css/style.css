@@ -200,30 +200,32 @@ body {
   cursor: pointer;
 }
 
-/* LABEL */
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
 .music-label {
-  background: rgba(0,0,0,0.7);
-  color: white;
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
   padding: 6px 12px;
   border-radius: 12px;
-  font-size: 14px;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: 0.3s;
+  font-size: 13px;
+  opacity: 1; /* LUÔN HIỆN */
 }
 
-.music-label.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* SELECT */
 .music-select {
-  background: rgba(0,0,0,0.7);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 6px;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  z-index: 1000;
 }
 
 
