@@ -32,5 +32,6 @@ select.addEventListener("change", () => {
     isPlaying = true;
     toggle.textContent = "🔊";
     label.textContent = select.options[select.selectedIndex].text;
+    label.style.opacity = "1";
   });
 });
