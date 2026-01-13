@@ -301,19 +301,34 @@ window.addEventListener("load", () => {
 </script>
 
   <!--âm thanh intro -->
+  <div class="video-intro">
   <video id="introVideo" autoplay muted playsinline>
-  <source src="intro.mp4" type="video/mp4">
-</video>
+    <source src="intro.mp4" type="video/mp4">
+  </video>
 
-<button onclick="toggleSound()">🔊 Bật âm thanh</button>
-<button onclick="toggleReplay)">⟲ Replay</button>
+  <!-- Nút bật/tắt âm thanh -->
+  <button id="soundBtn" class="control-btn">🔊</button>
+
+  <!-- Nút replay -->
+  <button id="replayBtn" class="control-btn replay">⟲</button>
+</div>
+
 <script>
   const video = document.getElementById("introVideo");
+  const soundBtn = document.getElementById("soundBtn");
+  const replayBtn = document.getElementById("replayBtn");
 
-  function toggleSound() {
-    video.muted = false;
-    video.volume = 1;
-  }
+  // Bật / tắt âm thanh
+  soundBtn.onclick = () => {
+    video.muted = !video.muted;
+    soundBtn.textContent = video.muted ? "🔇" : "🔊";
+  };
+
+  // Replay video
+  replayBtn.onclick = () => {
+    video.currentTime = 0;
+    video.play();
+  };
 </script>
 
 <!--Start of Tawk.to Script-->
@@ -335,6 +350,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
