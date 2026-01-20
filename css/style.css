@@ -634,3 +634,55 @@ body {
     align-items: center;
   }
 }
+/* NÚT MINDMAP */
+.mindmap-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.mindmap-btn {
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.mindmap-btn:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(0,170,255,0.85);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+/* MODAL */
+#mindmapModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#mindmapFrame {
+  width: 92%;
+  height: 92%;
+  border-radius: 16px;
+  border: none;
+  background: #fff;
+}
+
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
