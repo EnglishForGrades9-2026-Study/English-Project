@@ -187,36 +187,53 @@ select.onchange = () => {
  </div>
 </div>
 
-  <!-- 3 NÚT MINDMAP -->
-<div class="mindmap-section">
-  <div class="mindmap-tabs">
-    <button onclick="loadMindmap('mindmap/vocabulary.mindmap.png')">
+  <!-- mindmap -->
+<section class="mindmap-section">
+  <h2>MINDMAP HỌC TẬP</h2>
+
+  <div class="mindmap-cards">
+    <div class="mindmap-card" onclick="showMindmap('vocab')">
       Vocabulary Mindmap 📚
-    </button>
-    <button onclick="loadMindmap('mindmap/grammar.mindmap.png')">
+    </div>
+    <div class="mindmap-card" onclick="showMindmap('grammar')">
       Grammar Mindmap 📔
-    </button>
-    <button onclick="loadMindmap('mindmap/writing.mindmap.png')">
+    </div>
+    <div class="mindmap-card" onclick="showMindmap('writing')">
       Writing Mindmap 📝
-    </button>
+    </div>
   </div>
 
-  <iframe
-    id="mindmapFrame"
-    src="mindmap/vocabulary.mindmap.png"
-    loading="lazy">
-  </iframe>
-</div>
+  <div class="mindmap-view">
+    <img id="vocab" src="mindmap/vocab.png" />
+    <img id="grammar" src="mindmap/grammar.png" />
+    <img id="writing" src="mindmap/writing.png" />
+  </div>
+</section>
 
-<!-- MODAL IFRAME -->
-<div id="mindmapModal">
-  <span id="closeModal">✖</span>
-  <iframe id="mindmapFrame"></iframe>
+<!-- MODAL -->
+<div id="imgModal">
+  <span onclick="closeModal()">✖</span>
+  <img id="modalImg">
 </div>
 
   <script>
-  function loadMindmap(src) {
-    document.getElementById("mindmapFrame").src = src;
+  const imgs = document.querySelectorAll(".mindmap-view img");
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+
+  function showMindmap(id) {
+    imgs.forEach(img => img.style.display = "none");
+    const target = document.getElementById(id);
+    target.style.display = "block";
+
+    target.onclick = () => {
+      modal.style.display = "flex";
+      modalImg.src = target.src;
+    };
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
   }
 </script>
     
@@ -383,6 +400,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
