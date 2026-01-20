@@ -56,3 +56,22 @@ modal.onclick = (e) => {
     frame.src = "";
   }
 };
+
+// CLICK PHÓNG TO MINDMAP
+document.querySelectorAll(".mindmap-view img").forEach(img => {
+  img.addEventListener("click", () => {
+    document.getElementById("zoomImg").src = img.src;
+    document.getElementById("mindmapZoom").style.display = "flex";
+  });
+});
+
+// ĐÓNG
+document.getElementById("closeZoom").onclick = () => {
+  document.getElementById("mindmapZoom").style.display = "none";
+};
+
+document.getElementById("mindmapZoom").onclick = (e) => {
+  if (e.target.id === "mindmapZoom") {
+    e.currentTarget.style.display = "none";
+  }
+};
