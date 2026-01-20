@@ -592,3 +592,133 @@ body {
   color: white;
   cursor: pointer;
 }
+
+/* ===============================
+   MINDMAP HOVER – ALL IN ONE
+   =============================== */
+/* CARD */
+.mindmap-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hiệu ứng ánh sáng quét */
+.mindmap-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* Hover card */
+.mindmap-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,170,255,0.45);
+}
+
+.mindmap-card:hover::after {
+  transform: translateX(120%);
+}
+
+/* ===============================
+   MINDMAP IMAGE
+   =============================== */
+.mindmap-view img {
+  max-width: 100%;
+  border-radius: 16px;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  animation: fadeUp 0.45s ease;
+}
+/* Hover ảnh */
+.mindmap-view img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.45);
+}
+/* ===============================
+   FADE IN EFFECT
+   =============================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   MOBILE FIX
+   =============================== */
+@media (max-width: 768px) {
+  .mindmap-card:hover {
+    transform: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+.mindmap-view img:hover {
+    transform: none;
+  }
+}
+
+/* ===============================
+   FULLSCREEN ZOOM
+   =============================== */
+#mindmapZoom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+#mindmapZoom img {
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  animation: zoomIn 0.35s ease;
+}
+
+#closeZoom {
+  position: absolute;
+  top: 18px;
+  right: 26px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#closeZoom:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
