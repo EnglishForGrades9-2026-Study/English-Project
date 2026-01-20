@@ -186,40 +186,33 @@ select.onchange = () => {
   </a>
  </div>
 </div>
-<!-- phần mindmap  -->
-<div class="mindmap-row">
 
-  <!-- VOCABULARY -->
-  <div class="mindmap-box vocaburaly">
-    <h3>📘 Vocabulary Mindmap</h3>
-    <iframe 
-      src="mindmap/vocabulary.mindmap.png"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <!-- 3 NÚT MINDMAP -->
+<div class="mindmap-buttons">
 
-  <!-- GRAMMAR -->
-  <div class="mindmap-box grammar">
-    <h3>📗 Grammar Mindmap</h3>
-    <iframe 
-      src="mindmap/grammar.mindmap.png"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <button class="mindmap-btn"
+    data-src="https://quan0512-hoang.github.io/Chat-AI/mindmap/vocabulary.mindmap.png">
+    📘 Vocabulary Mindmap
+  </button>
 
-  <!-- WRITING -->
-  <div class="mindmap-box writing">
-    <h3>📕 Writing Mindmap</h3>
-    <iframe 
-      src="mindmap/writing.mindmap.png"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <button class="mindmap-btn"
+    data-src="https://quan0512-hoang.github.io/Chat-AI/mindmap/grammar.mindmap.png">
+    📗 Grammar Mindmap
+  </button>
+
+  <button class="mindmap-btn"
+    data-src="https://quan0512-hoang.github.io/Chat-AI/mindmap/writing.mindmap.png">
+    📕 Writing Mindmap
+  </button>
 
 </div>
+
+<!-- MODAL IFRAME -->
+<div id="mindmapModal">
+  <span id="closeModal">✖</span>
+  <iframe id="mindmapFrame"></iframe>
+</div>
+
     
 <!-- PHẦN VIDEO -->
 <div class="videos">
@@ -384,6 +377,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
