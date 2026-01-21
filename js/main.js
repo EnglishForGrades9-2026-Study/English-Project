@@ -75,3 +75,47 @@ document.getElementById("mindmapZoom").onclick = (e) => {
     e.currentTarget.style.display = "none";
   }
 };
+
+// nhiệm vụ hàng ngày 
+const tasks = document.querySelectorAll('[data-task]');
+const progressFill = document.getElementById('progressFill');
+const progressText = document.getElementById('progressText');
+const doneCount = document.getElementById('doneCount');
+const totalCount = document.getElementById('totalCount');
+const todayEl = document.getElementById('today');
+
+const today = new Date().toLocaleDateString();
+todayEl.textContent = "📆 " + today;
+
+const STORAGE_KEY = "studyTasks_" + today;
+
+// reset nếu sang ngày mới
+if (!localStorage.getItem("lastDay") || localStorage.getItem("lastDay") !== today) {
+  localStorage.clear();
+  localStorage.setItem("lastDay", today);
+}
+
+// load trạng thái
+const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+tasks.forEach((task, i) => {
+  task.checked = saved[i] || false;
+});
+
+function updateProgress() {
+  const total = tasks.length;
+  const done = [...tasks].filter(t => t.checked).length;
+  const percent = Math.round((done / total) * 100);
+
+  progressFill.style.width = percent + "%";
+  progressText.textContent = percent + "%";
+  doneCount.textContent = done;
+  totalCount.textContent = total;
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify([...tasks].map(t => t.checked))
+  );
+}
+
+tasks.forEach(task => task.addEventListener('change', updateProgress));
+updateProgress();
