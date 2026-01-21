@@ -283,36 +283,50 @@ select.onchange = () => {
 </div>
 
   <!--nhiệm vụ hàng ngày -->
-  <div class="daily-quest">
-  <h2>📅 NHIỆM VỤ NGÀY 01: <span>THE AWAKENING</span></h2>
+  <section class="study-tasks">
+  <h2>📅 Nhiệm Vụ Học Tập Hôm Nay</h2>
+  <p id="today"></p>
 
-  <div class="quest">
-    <input type="checkbox">
-    <div>
-      <h3>🐦 The Early Bird</h3>
-      <p><b>Yêu cầu:</b> Hoàn thành 1 chu kỳ Study Timer (25 phút).</p>
-      <p class="reward">🏆 Phần thưởng: Badge Bình Minh Rực Rỡ</p>
+  <!-- PROGRESS -->
+  <div class="progress-box">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
     </div>
+    <span id="progressText">0%</span>
   </div>
 
-  <div class="quest">
-    <input type="checkbox">
-    <div>
-      <h3>🎯 Grammar Sniper</h3>
-      <p><b>Yêu cầu:</b> Giải đúng 10 câu Grammar liên tiếp.</p>
-      <p class="reward">✨ Phần thưởng: +50 EXP</p>
+  <!-- TASKS -->
+  <div class="task-grid">
+
+    <div class="task-card vocab">
+      <h3>📘 Vocabulary</h3>
+      <label><input type="checkbox" data-task> Học 15 từ mới</label>
+      <label><input type="checkbox" data-task> Word Formation</label>
+      <label><input type="checkbox" data-task> Collocations</label>
     </div>
+
+    <div class="task-card grammar">
+      <h3>📗 Grammar</h3>
+      <label><input type="checkbox" data-task> Ôn 1 thì</label>
+      <label><input type="checkbox" data-task> 10 câu trắc nghiệm</label>
+      <label><input type="checkbox" data-task> Xem lỗi sai</label>
+    </div>
+
+    <div class="task-card writing">
+      <h3>📕 Writing</h3>
+      <label><input type="checkbox" data-task> Viết 5 câu</label>
+      <label><input type="checkbox" data-task> Ghép câu</label>
+      <label><input type="checkbox" data-task> Tự sửa lỗi</label>
+    </div>
+
   </div>
 
-  <div class="quest">
-    <input type="checkbox">
-    <div>
-      <h3>⚗️ Writing Alchemist</h3>
-      <p><b>Yêu cầu:</b> Chuyển 5 câu chủ động → bị động.</p>
-      <p class="reward">🌟 Phần thưởng: Hiệu ứng chữ</p>
-    </div>
+  <!-- STATS -->
+  <div class="stats">
+    <p>✅ Hoàn thành: <b id="doneCount">0</b> / <b id="totalCount">0</b> nhiệm vụ</p>
   </div>
-</div>
+</section>
+
 
 <!-- HƯỚNG DẪN -->
 <div class="help-wrapper open" id="helpWrapper">
@@ -406,6 +420,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
