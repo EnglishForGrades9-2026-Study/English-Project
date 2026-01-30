@@ -187,61 +187,14 @@ select.onchange = () => {
  </div>
 </div>
 
-  <!-- mindmap -->
-<section class="mindmap-section">
-  <h2>MINDMAP HỌC TẬP</h2>
-
-  <div class="mindmap-cards">
-    <div class="mindmap-card" onclick="showMindmap('vocab')">
-      Vocabulary Mindmap 📚
-    </div>
-    <div class="mindmap-card" onclick="showMindmap('grammar')">
-      Grammar Mindmap 📔
-    </div>
-    <div class="mindmap-card" onclick="showMindmap('writing')">
-      Writing Mindmap 📝
-    </div>
-  </div>
-
-  <div class="mindmap-view">
-    <img id="vocab" src="mindmap/vocab.png" />
-    <img id="grammar" src="mindmap/grammar.png" />
-    <img id="writing" src="mindmap/writing.png" />
-  </div>
+  <!-- hệ thống mindmap -->
+ <section class="mindmap-entry">
+  <h2>Hệ thống Mindmap 📝</h2>
+  <p>Mindmap chi tiết cho Vocabulary, Grammar, Writing</p>
+  <a href="mindmap/index.html" class="btn">
+    Mở Mindmap học tập
+  </a>
 </section>
-
-<!-- MODAL -->
-<div id="imgModal">
-  <span onclick="closeModal()">✖</span>
-  <img id="modalImg">
-</div>
-
-  <script>
-  const imgs = document.querySelectorAll(".mindmap-view img");
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImg");
-
-  function showMindmap(id) {
-    imgs.forEach(img => img.style.display = "none");
-    const target = document.getElementById(id);
-    target.style.display = "block";
-
-    target.onclick = () => {
-      modal.style.display = "flex";
-      modalImg.src = target.src;
-    };
-  }
-
-  function closeModal() {
-    modal.style.display = "none";
-  }
-</script>
-
-  <!-- FULLSCREEN MINDMAP -->
-<div id="mindmapZoom">
-  <span id="closeZoom">✖</span>
-  <img id="zoomImg" src="">
-</div>
   
 <!-- PHẦN VIDEO -->
 <div class="videos">
@@ -516,6 +469,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </body>
 </html>
+
 
 
 
