@@ -626,26 +626,32 @@ body {
 .mindmap-box {
   max-width: 900px;
   margin: auto;
-  padding: 40px;
-  border-radius: 22px;
+  padding: 50px 40px;
+  border-radius: 26px;
+
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(5px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+
+  /* QUAN TRỌNG */
+  text-align: center;
 }
 
 .mindmap-box h2 {
-  font-size: 30px;
-  margin-bottom: 12px;
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 .mindmap-box p {
-  line-height: 1.6;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
   opacity: 0.9;
 }
 
 .mindmap-btn-main {
   display: inline-block;
-  margin: 25px 0;
+  margin: 30px auto;
   padding: 14px 30px;
   border-radius: 30px;
   font-weight: bold;
@@ -662,8 +668,9 @@ body {
 
 .mindmap-quick {
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
 }
 
 .mindmap-quick a {
