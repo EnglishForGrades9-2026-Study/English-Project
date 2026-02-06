@@ -1,3 +1,4 @@
+/* MINMAP */
 .mindmap-header {
   text-align: center;
   padding: 40px 20px;
@@ -80,4 +81,47 @@ ul {
 li {
   margin: 12px 0;
   font-size: 18px;
+}
+.mindmap-highlight {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  text-align: center;
+
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.mindmap-highlight h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.mindmap-highlight p {
+  color: #cbd5f5;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.mindmap-btn {
+  display: inline-block;
+  padding: 18px 36px;
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #0f172a;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  border-radius: 50px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.mindmap-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(56,189,248,0.5);
 }
