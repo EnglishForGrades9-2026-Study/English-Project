@@ -1,99 +1,81 @@
-/* MINMAP */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== PAGE ===== */
-.mindmap-page {
+body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  color: #e5e7eb;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .mindmap-header {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 60px 20px 40px;
 }
 
 .mindmap-header h1 {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   margin-bottom: 10px;
 }
 
 .mindmap-header p {
-  color: #94a3b8;
-  font-size: 1rem;
+  opacity: 0.8;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* MAIN */
 .mindmap-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
   max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .mindmap-card {
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 35px 25px;
+  text-align: center;
   text-decoration: none;
-  color: inherit;
-
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  padding: 28px 24px;
-
+  color: #fff;
+  transition: 0.35s;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.08);
-
-  transition: all 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
 }
 
 .mindmap-card h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
 }
 
 .mindmap-card p {
   font-size: 0.95rem;
-  color: #cbd5f5;
-  line-height: 1.4;
+  opacity: 0.85;
 }
 
-/* ===== HOVER ===== */
 .mindmap-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  transform: translateY(-10px) scale(1.03);
 }
 
-/* ===== COLOR THEMES ===== */
-.mindmap-card.vocab {
-  border-left: 5px solid #38bdf8;
-}
+/* MÀU RIÊNG */
+.vocab { border-top: 5px solid #00d4ff; }
+.grammar { border-top: 5px solid #00ff9d; }
+.writing { border-top: 5px solid #ffb703; }
 
-.mindmap-card.grammar {
-  border-left: 5px solid #a78bfa;
-}
-
-.mindmap-card.writing {
-  border-left: 5px solid #34d399;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 .mindmap-footer {
   text-align: center;
-  padding: 30px 0 40px;
+  padding: 30px;
 }
 
 .mindmap-footer a {
-  color: #60a5fa;
+  color: #9ad7ff;
   text-decoration: none;
   font-size: 0.95rem;
 }
