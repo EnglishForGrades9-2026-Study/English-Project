@@ -54,3 +54,18 @@ document.querySelectorAll(".hover-direction-text").forEach(el => {
     el.style.backgroundPosition = "50% 50%";
   });
 });
+const title = document.querySelector(".mindmap-title span");
+
+title.addEventListener("mousemove", e => {
+  const rect = title.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+
+  const percent = (x / rect.width) * 100;
+  title.style.backgroundPosition = `${percent}% 50%`;
+  title.style.filter = "drop-shadow(0 0 18px rgba(167,139,250,0.9))";
+});
+
+title.addEventListener("mouseleave", () => {
+  title.style.backgroundPosition = "50% 50%";
+  title.style.filter = "none";
+});
