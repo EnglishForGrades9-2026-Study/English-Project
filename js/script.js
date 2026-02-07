@@ -35,3 +35,22 @@ select.addEventListener("change", () => {
     label.style.opacity = "1";
   });
 });
+
+// hover mindmap
+document.querySelectorAll(".hover-direction-text").forEach(el => {
+  el.addEventListener("mousemove", e => {
+    const rect = el.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+
+    el.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+  });
+
+  el.addEventListener("mouseleave", () => {
+    el.style.backgroundPosition = "50% 50%";
+  });
+});
