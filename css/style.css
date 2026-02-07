@@ -686,24 +686,28 @@ body {
   background: rgba(255,255,255,0.3);
 }
 
-.hover-direction-text {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: transparent;
-  background-image: linear-gradient(
-    90deg,
-    #22d3ee,
-    #a78bfa,
-    #f472b6
-  );
-  background-size: 200% 200%;
-  background-position: 50% 50%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  transition: background-position 0.15s linear;
-  cursor: default;
+.mindmap-title {
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
 }
 
-.hover-direction-text:hover {
-  text-shadow: 0 0 16px rgba(167, 139, 250, 0.6);
+.mindmap-title span {
+  position: relative;
+  display: inline-block;
+  color: #e5e7eb;
+  background-image: linear-gradient(
+    120deg,
+    #22d3ee 0%,
+    #a78bfa 40%,
+    #f472b6 60%,
+    #22d3ee 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: filter 0.2s ease;
 }
