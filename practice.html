@@ -1,1 +1,148 @@
+<!-- làm bài tập trên wed -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Study Mode</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f2f5ff;
+}
+
+.header{
+  height:60px;
+  background:#111;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  gap:16px;
+}
+
+.header button{
+  background:#0d6efd;
+  border:none;
+  color:white;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.container{
+  max-width:800px;
+  margin:30px auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  margin-bottom:18px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+button.main{
+  display:block;
+  margin:25px auto;
+  padding:14px 26px;
+  font-size:18px;
+  background:#28a745;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+#result{
+  text-align:center;
+  font-size:26px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <button onclick="location.href='index.html'">⬅ Trang chính</button>
+  <h2>📘 Practice Mode</h2>
+</div>
+
+<div class="container">
+
+<div class="card">
+1. Astonished =
+<select id="q1">
+<option value="">-- chọn --</option>
+<option value="A">Remove</option>
+<option value="B">Very surprised</option>
+<option value="C">Wealthy</option>
+<option value="D">Complicated</option>
+</select>
+</div>
+
+<div class="card">
+2. Eliminate =
+<select id="q2">
+<option value="">-- chọn --</option>
+<option value="A">Remove</option>
+<option value="B">Very surprised</option>
+<option value="C">Wealthy</option>
+<option value="D">Complicated</option>
+</select>
+</div>
+
+<div class="card">
+3. Complex =
+<select id="q3">
+<option value="">-- chọn --</option>
+<option value="A">Remove</option>
+<option value="B">Very surprised</option>
+<option value="C">Wealthy</option>
+<option value="D">Complicated</option>
+</select>
+</div>
+
+<div class="card">
+4. Huge =
+<select id="q4">
+<option value="">-- chọn --</option>
+<option value="A">Enormous</option>
+<option value="B">Tiny</option>
+<option value="C">Weak</option>
+<option value="D">Short</option>
+</select>
+</div>
+
+<button class="main" onclick="check()">🔥 Nộp bài</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function check(){
+  let score = 0;
+
+  if(q1.value==="B") score++;
+  if(q2.value==="A") score++;
+  if(q3.value==="D") score++;
+  if(q4.value==="A") score++;
+
+  let msg = "🎯 Điểm của bạn: " + score + "/4";
+
+  if(score===4) msg += " 🏆 Xuất sắc!";
+  else if(score>=2) msg += " 👍 Khá tốt!";
+  else msg += " 💪 Cố lên!";
+
+  document.getElementById("result").innerHTML = msg;
+}
+</script>
+
+</body>
+</html>
