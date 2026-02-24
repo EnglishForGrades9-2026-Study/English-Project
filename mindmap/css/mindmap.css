@@ -346,3 +346,83 @@ body {
   box-shadow:
     0 12px 35px rgba(99,102,241,0.55);
 }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* Container giữa màn hình */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Header */
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Menu */
+
+.mindmap-menu {
+  margin-top: 40px;
+}
+
+.mindmap-box {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+  padding: 20px;
+  margin: 20px auto;
+
+  border-radius: 15px;
+  width: 80%;
+
+  transition: 0.25s;
+}
+
+/* Màu */
+
+.blue {
+  background: #2196f3;
+}
+
+.purple {
+  background: #9c27b0;
+}
+
+/* Hover */
+
+.mindmap-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Back link */
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: white;
+}
