@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grammar Unit</title>
 
+<style>
+body{font-family:Arial;background:#111;color:white;text-align:center}
+.box{background:#1e1e1e;padding:20px;margin:30px auto;border-radius:12px;max-width:600px}
+button{padding:10px 18px;border:none;border-radius:8px;background:#4CAF50;color:white}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Unit 1 — Present Simple</h2>
+
+<p>She ____ to school every day.</p>
+
+<label><input type="radio" name="q1" value="A"> go</label><br>
+<label><input type="radio" name="q1" value="B"> goes</label><br>
+<label><input type="radio" name="q1" value="C"> going</label>
+
+<br><br>
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<a href="../index.html" style="color:#4CAF50">⬅️ Back</a>
+
+</div>
+
+<script>
+function check(){
+ let ans=document.querySelector('input[name="q1"]:checked');
+ if(!ans)return;
+
+ result.textContent = ans.value==="B" ? "✔ Correct!" : "✘ Wrong!";
+}
+</script>
+
+</body>
+</html>
