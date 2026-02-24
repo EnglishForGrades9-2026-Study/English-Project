@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grammar Exam</title>
 
+<style>
+body{font-family:Arial;background:#111;color:white;text-align:center}
+.box{background:#1e1e1e;padding:20px;margin:30px auto;border-radius:12px;max-width:600px}
+button{padding:10px 18px;border:none;border-radius:8px;background:#2196F3;color:white}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Grammar Exam</h2>
+
+<p>1. They ____ TV right now.</p>
+
+<label><input type="radio" name="e1" value="A"> watch</label><br>
+<label><input type="radio" name="e1" value="B"> watches</label><br>
+<label><input type="radio" name="e1" value="C"> are watching</label>
+
+<br><br>
+
+<p>2. I ____ to school yesterday.</p>
+
+<label><input type="radio" name="e2" value="A"> go</label><br>
+<label><input type="radio" name="e2" value="B"> went</label><br>
+<label><input type="radio" name="e2" value="C"> gone</label>
+
+<br><br>
+
+<button onclick="submitExam()">Submit</button>
+
+<p id="score"></p>
+
+<a href="../index.html" style="color:#4CAF50">⬅ Back</a>
+
+</div>
+
+<script>
+function submitExam(){
+ let s=0;
+
+ if(document.querySelector('input[name="e1"]:checked')?.value==="C") s++;
+ if(document.querySelector('input[name="e2"]:checked')?.value==="B") s++;
+
+ score.textContent="Score: "+s+"/2";
+}
+</script>
+
+</body>
+</html>
