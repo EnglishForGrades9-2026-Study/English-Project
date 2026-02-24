@@ -426,3 +426,54 @@ header p {
 .back-link:hover {
   color: white;
 }
+
+.bottom-area {
+  margin-top: 60px;
+}
+
+/* Nút quay về */
+
+.home-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+
+  transition: 0.25s;
+}
+
+.home-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.tips-box {
+  margin: 60px auto 0;
+  max-width: 600px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+
+  padding: 25px 30px;
+  border-radius: 18px;
+
+  text-align: left;
+}
+
+.tips-box h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.tips-box ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
