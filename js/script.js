@@ -69,3 +69,14 @@ title.addEventListener("mouseleave", () => {
   title.style.backgroundPosition = "50% 50%";
   title.style.filter = "none";
 });
+
+// NÚT CUỘN LÊN ĐẦU TRANG 
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+scrollBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
