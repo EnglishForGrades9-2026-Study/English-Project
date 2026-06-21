@@ -1,20 +1,123 @@
+/* ============================================================
+   Mục lục (Ctrl+F để nhảy nhanh tới section):
+   1. ROOT VARIABLES
+   2. GLOBAL / BASE
+   3. SITE TITLE (Holographic text)
+   4. SKILL CARDS (Vocabulary / Grammar / Writing)
+   5. VIDEO SECTION (caption + iframe)
+   6. MUSIC PLAYER
+   7. STUDY TIMER (widget góc phải)
+   8. VIDEO INTRO (video mở đầu fullscreen)
+   9. HELP BOX (hướng dẫn sử dụng - góc trái dưới)
+   10. STUDY HEADER + IFRAME (trang study.html)
+   11. MINDMAP - TRANG CHỦ (card giới thiệu mindmap)
+   12. MINDMAP - TRANG MINDMAP (cards + modal ảnh)
+   13. DAILY TASKS (nhiệm vụ học tập + progress bar)
+   ============================================================ */
+
+
+/* ============================================================
+   1. ROOT VARIABLES — đổi màu/kích thước chung tại đây
+   ============================================================ */
+:root {
+  /* Màu chủ đạo (xanh dương -> cyan, dùng cho nút, hover, progress...) */
+  --color-primary: #00aaff;
+  --color-primary-dark: #0072ff;
+  --color-primary-light: #00c6ff;
+  --color-accent-cyan: #00eaff;
+  --color-accent-sky: #0ea5e9;
+  --color-accent-sky-dark: #0369a1;
+
+  /* Nền tối dùng cho card / box */
+  --bg-dark: rgba(0, 0, 0, 0.6);
+  --bg-dark-strong: rgba(0, 0, 0, 0.85);
+  --bg-card: #111;
+
+  /* Chữ */
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --text-muted-2: #e5e7eb;
+
+  /* Bo góc & khoảng cách dùng lại nhiều nơi */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 30px;
+
+  --transition-fast: 0.3s ease;
+  --transition-mid: 0.4s ease;
+}
+
+
+/* ============================================================
+   2. GLOBAL / BASE
+   ============================================================ */
 html, body {
   background-image: url("../img/background.jpg");
-  background-size: cover;        /* phủ kín */
-  background-position: center;   /* căn giữa */
-  background-repeat: no-repeat;  /* không lặp */
-  background-attachment: fixed;  /* cuộn không chạy */
-  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-light);
+}
+
+body {
+  font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 .title {
   text-align: center;
   margin: 40px 0;
-  background: black;
+  background: #000;
   padding: 6px 10px;
-  border-radius: px;
+  border-radius: var(--radius-sm); /* FIX: trước đây thiếu số (lỗi cú pháp) */
 }
 
+
+/* ============================================================
+   3. SITE TITLE — chữ "English For Grades 9" hiệu ứng holographic
+   ============================================================ */
+.site-title {
+  text-align: center;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.holo-text {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-cyan),
+    #4facfe,
+    #a18cd1,
+    var(--color-accent-cyan)
+  );
+  background-size: 200%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
+  -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.35);
+  transition: background-position 0.4s ease;
+}
+
+.holo-text:hover {
+  background-position: 100% 50%;
+  text-shadow:
+    0 0 15px rgba(0, 255, 255, 0.9),
+    0 0 30px rgba(255, 110, 199, 0.8);
+}
+
+
+/* ============================================================
+   4. SKILL CARDS — 3 thẻ Vocabulary / Grammar / Writing
+   ============================================================ */
 .skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -23,7 +126,7 @@ html, body {
 }
 
 .card {
-  background: #111;
+  background: var(--bg-card);
   padding: 20px;
   text-align: center;
   border-radius: 10px;
@@ -42,89 +145,26 @@ html, body {
   color: #000;
   text-decoration: none;
   border-radius: 5px;
+  transition: var(--transition-fast);
 }
 
 .btn:hover {
   background: #ddd;
 }
 
-.videos {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.video-item {
-  width: 320px;
-  text-align: center;
-}
-
-.video-item iframe {
-  width: 100%;
-  height: 180px;
-  border-radius: 8px;
-}
-
-body {
-  font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-.caption {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #ccc;
-}
-.caption {
-  margin-top: 12px;
-  font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-.cap-title {
-  padding: 6px 10px;
-  margin-bottom: 6px;
-  font-size: 15px;
-  font-weight: 700;
-  color: #29a683e3;
-  background: rgba(251,247,176);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.cap-title:hover {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1);
-  transform: translateX(6px);
-  box-shadow: 0 8px 20px rgba(14,165,233,0.6);
-}
-
-.cap-desc {
-  padding: 6px 10px;
-  font-size: 14px;
-  color: #e5e7eb;
-  background: rgba(35,34,34,0.63);
-  border-radius: 8px;
-  line-height: 1.6;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.cap-desc:hover {
-  background: linear-gradient(135deg, #38bdf8, #0284c7);
-  transform: translateX(6px);
-  box-shadow: 0 8px 20px rgba(56,189,248,0.6);
-}
-
+/* Bản nâng cấp của .card khi nằm trong .skills: hiệu ứng glow + tilt khi hover */
 .skills .card {
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 18px;
+  background: var(--bg-dark);
+  border-radius: var(--radius-lg);
   padding: 24px;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all var(--transition-mid);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
 }
 
+/* Vệt sáng lướt qua khi hover */
 .skills .card::before {
   content: "";
   position: absolute;
@@ -141,14 +181,10 @@ body {
 
 .skills .card:hover {
   transform: translateY(-12px) scale(1.03);
-  background: linear-gradient(
-    135deg,
-    #0ea5e9,
-    #0369a1
-  );
+  background: linear-gradient(135deg, var(--color-accent-sky), var(--color-accent-sky-dark));
   box-shadow:
-    0 0 0 2px rgba(255,255,255,0.7),
-    0 30px 60px rgba(14,165,233,0.6);
+    0 0 0 2px rgba(255, 255, 255, 0.7),
+    0 30px 60px rgba(14, 165, 233, 0.6);
 }
 
 .skills .card:hover::before {
@@ -156,28 +192,93 @@ body {
 }
 
 .skills .card img {
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-mid);
 }
 
 .skills .card:hover img {
   transform: scale(1.08);
 }
 
-.skills .card .btn {
-  transition: all 0.3s ease;
+.skills .card .btn,
+.card .btn {
+  transition: all var(--transition-fast);
 }
 
-.skills .card:hover .btn {
-  background-color: #ffffff;
-  color: #0369a1;
-}
-
+/* Nút bên trong card đổi màu khi hover card (gộp 2 rule trùng cũ lại) */
+.skills .card:hover .btn,
 .card:hover .btn {
   background-color: #ffffff;
-  color: #0078ff;
+  color: var(--color-accent-sky-dark);
 }
 
-/* 🎵 MUSIC PLAYER */
+
+/* ============================================================
+   5. VIDEO SECTION — danh sách video + caption mô tả
+   ============================================================ */
+.videos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-item {
+  width: 320px;
+  text-align: center;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-sm);
+}
+
+/* Caption dưới mỗi video (đã gộp 2 rule .caption trùng nhau trước đây) */
+.caption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.cap-title {
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #29a683e3;
+  background: rgb(251, 247, 176);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.cap-title:hover {
+  background: linear-gradient(135deg, var(--color-accent-sky), var(--color-accent-sky-dark));
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.6);
+}
+
+.cap-desc {
+  padding: 6px 10px;
+  font-size: 14px;
+  color: var(--text-muted-2);
+  background: rgba(35, 34, 34, 0.63);
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.cap-desc:hover {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.6);
+}
+
+
+/* ============================================================
+   6. MUSIC PLAYER — icon nhạc + label + chọn bài (góc trên trái)
+   ============================================================ */
 .music-player {
   position: fixed;
   top: 20px;
@@ -188,13 +289,12 @@ body {
   gap: 10px;
 }
 
-/* ICON */
 .music-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 20px;
   cursor: pointer;
@@ -213,14 +313,19 @@ body {
   position: fixed;
   top: 55px;
   left: 3px;
-  background: rgba(53,64,183,0.50);
+  background: rgba(53, 64, 183, 0.5);
   color: #fff;
   padding: 6px 12px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   font-size: 13px;
-  opacity: 0; /* LUÔN HIỆN */
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+/* JS thêm class "show" khi đổi bài / bật nhạc để hiện label này lên */
+.music-label.show {
+  opacity: 1;
 }
 
 .music-select {
@@ -231,6 +336,9 @@ body {
 }
 
 
+/* ============================================================
+   7. STUDY TIMER — widget đếm giờ học (góc phải, kéo ra khi hover)
+   ============================================================ */
 .timer-wrapper {
   position: fixed;
   top: 150px;
@@ -243,7 +351,7 @@ body {
   top: 10px;
   right: -256px;
   width: 240px;
-  background: rgba(126,168,173,0.71);
+  background: rgba(126, 168, 173, 0.71);
   color: #d88133de;
   padding: 16px;
   border-radius: 16px 0 0 16px;
@@ -274,54 +382,53 @@ body {
   transform: translateY(-50%);
   width: 36px;
   height: 60px;
-  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px 0 0 12px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
 }
 
-.site-title {
-  text-align: center;
-  font-size: 100px;
-  font-weight: 800;
-  text-align: center;
+
+/* ============================================================
+   8. VIDEO INTRO — video fullscreen mở đầu trang
+   ============================================================ */
+.video-intro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.holo-text {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 44px;
-  font-weight: 900;
-  letter-spacing: 1px;
-
- background: linear-gradient(
-    90deg,
-    #00eaff,
-    #4facfe,
-    #a18cd1,
-    #00eaff
-  );
- background-size: 200%;
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 0 1px rgba(255,255,255,0.6);
-  filter: none;
-  opacity: 1;
-  transition: background-position 0.4s ease;
-  -webkit-text-stroke: 0.6px rgba(255,255,255,0.35);
+.video-intro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* HOVER */
-.holo-text:hover {
-  background-position: 100% 50%;
-  text-shadow:
-    0 0 15px rgba(0,255,255,0.9),
-    0 0 30px rgba(255,110,199,0.8);
+.control-btn {
+  position: absolute;
+  bottom: 650px; /* TODO: số cố định, dễ vỡ layout trên màn nhỏ — nên đổi sang bottom: 20px hoặc dùng vh */
+  right: 20px;
+  margin-left: 10px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 
+.replay {
+  right: 80px;
+}
+
+
+/* ============================================================
+   9. HELP BOX — nút "❓" hướng dẫn sử dụng (góc trái dưới)
+   ============================================================ */
 .help-wrapper {
   position: fixed;
   bottom: 20px;
@@ -329,34 +436,29 @@ body {
   z-index: 10000;
 }
 
-/* ICON */
 .help-btn {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
   color: white;
   font-size: 22px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* PANEL */
 .help-box {
   position: absolute;
   bottom: 60px;
   left: 0;
-
   width: 360px;
-  background: rgba(0,0,0,0.85);
+  background: var(--bg-dark-strong);
   color: white;
   padding: 20px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
 
   opacity: 0;
   transform: translateY(20px) scale(0.95);
@@ -366,14 +468,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* MỞ PANEL */
 .help-wrapper.open .help-box {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-/* NÚT ĐÓNG */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -381,20 +481,24 @@ body {
   cursor: pointer;
 }
 
+
+/* ============================================================
+   10. STUDY HEADER + IFRAME — dùng trong study.html (nội dung bài học)
+   ============================================================ */
 .study-header {
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 12px 20px;
-  background: rgba(0,0,0,0.85);
+  background: var(--bg-dark-strong);
   color: white;
 }
 
 .study-header button {
-  background: #00aaff;
+  background: var(--color-primary);
   border: none;
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   color: white;
 }
@@ -410,7 +514,106 @@ body {
   border: none;
 }
 
-/* ===== mindmap ===== */
+
+/* ============================================================
+   11. MINDMAP — TRANG CHỦ (box giới thiệu, nút "Mở Mindmap học tập")
+   ============================================================ */
+.mindmap-home {
+  padding: 60px 20px;
+}
+
+.mindmap-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 40px;
+  border-radius: 26px;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+
+  text-align: center;
+}
+
+.mindmap-box h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.mindmap-box p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.mindmap-btn-main {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  font-weight: bold;
+  background: linear-gradient(135deg, #00ffd5, #00c3ff);
+  color: #000;
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.mindmap-btn-main:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 255, 213, 0.5);
+}
+
+.mindmap-quick {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.mindmap-quick a {
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.mindmap-quick a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mindmap-title {
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.mindmap-title span {
+  position: relative;
+  display: inline-block;
+  color: var(--text-muted-2);
+  background-image: linear-gradient(
+    120deg,
+    #22d3ee 0%,
+    #a78bfa 40%,
+    #f472b6 60%,
+    #22d3ee 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: filter 0.2s ease;
+}
+
+
+/* ============================================================
+   12. MINDMAP — TRANG MINDMAP (cards chọn unit + modal xem ảnh to)
+   ============================================================ */
 .small-cards {
   display: flex;
   justify-content: center;
@@ -421,13 +624,13 @@ body {
 
 .small-card {
   width: 220px;
-  background: rgba(0,0,0,0.6);
+  background: var(--bg-dark);
   padding: 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   text-align: center;
   position: relative;
   z-index: 20;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-fast);
 }
 
 .small-card:hover {
@@ -438,43 +641,12 @@ body {
   display: inline-block;
   margin-top: 10px;
   padding: 6px 14px;
-  background: #00aaff;
+  background: var(--color-primary);
   color: white;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
 }
-  
-/* video intro */
-.video-intro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-.video-intro video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.control-btn {
-  position: absolute;
-  bottom: 650px;
-  right: 20px;
-  margin-left: 10px;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  background: rgba(0,0,0,0.6);
-  color: white;
-}
-.replay {
-  right: 80px;
-}
 
-/* ===== MINDMAP ===== */
 .mindmap-section {
   text-align: center;
   margin: 60px auto;
@@ -490,31 +662,31 @@ body {
 
 .mindmap-card {
   padding: 14px 22px;
-  background: rgba(0,0,0,0.6);
+  background: var(--bg-dark);
   color: white;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: 0.3s;
 }
 
 .mindmap-card:hover {
-  background: #00aaff;
+  background: var(--color-primary);
   transform: translateY(-4px);
 }
 
 .mindmap-view img {
   display: none;
   max-width: 90%;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   cursor: zoom-in;
   margin: 20px auto;
 }
 
-/* ===== MODAL ===== */
+/* Modal xem ảnh mindmap to (bấm vào ảnh nhỏ sẽ phóng to) */
 #imgModal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: none;
   justify-content: center;
   align-items: center;
@@ -524,7 +696,7 @@ body {
 #imgModal img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
 }
 
 #imgModal span {
@@ -536,7 +708,10 @@ body {
   cursor: pointer;
 }
 
-/* nhiệm vụ hàng ngày */
+
+/* ============================================================
+   13. DAILY TASKS — nhiệm vụ học tập hàng ngày + progress bar
+   ============================================================ */
 .study-tasks {
   max-width: 1100px;
   margin: 60px auto;
@@ -553,7 +728,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Progress */
 .progress-box {
   display: flex;
   align-items: center;
@@ -586,10 +760,10 @@ body {
 
 .task-card {
   width: 300px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
   padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
 }
 
@@ -607,8 +781,8 @@ body {
   margin-right: 8px;
 }
 
-/* Colors */
-.vocab h3 { color: #4caf50; }
+/* Màu riêng cho từng nhóm kỹ năng trong task-card */
+.vocab h3   { color: #4caf50; }
 .grammar h3 { color: #2196f3; }
 .writing h3 { color: #ff9800; }
 
@@ -616,98 +790,4 @@ body {
   text-align: center;
   margin-top: 30px;
   font-size: 16px;
-}
-
-/* ===== MINDMAP HOME (TRANG CHÍNH) ===== */
-.mindmap-home {
-  padding: 60px 20px;
-}
-
-.mindmap-box {
-  max-width: 900px;
-  margin: auto;
-  padding: 50px 40px;
-  border-radius: 26px;
-
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.45);
-
-  /* QUAN TRỌNG */
-  text-align: center;
-}
-
-.mindmap-box h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.mindmap-box p {
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.7;
-  opacity: 0.9;
-}
-
-.mindmap-btn-main {
-  display: inline-block;
-  margin: 30px auto;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: bold;
-  background: linear-gradient(135deg, #00ffd5, #00c3ff);
-  color: #000;
-  text-decoration: none;
-  transition: transform .25s, box-shadow .25s;
-}
-
-.mindmap-btn-main:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,255,213,0.5);
-}
-
-.mindmap-quick {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.mindmap-quick a {
-  padding: 10px 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  text-decoration: none;
-  transition: background .2s;
-}
-
-.mindmap-quick a:hover {
-  background: rgba(255,255,255,0.3);
-}
-
-.mindmap-title {
-  position: relative;
-  font-size: 2.4rem;
-  font-weight: 800;
-  text-align: center;
-}
-
-.mindmap-title span {
-  position: relative;
-  display: inline-block;
-  color: #e5e7eb;
-  background-image: linear-gradient(
-    120deg,
-    #22d3ee 0%,
-    #a78bfa 40%,
-    #f472b6 60%,
-    #22d3ee 100%
-  );
-  background-size: 300% 100%;
-  background-position: 0% 50%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  transition: filter 0.2s ease;
 }
