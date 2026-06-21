@@ -426,37 +426,6 @@ window.addEventListener("load", () => {
 });
 </script>
 
-  <!--âm thanh intro -->
-  <div class="video-intro">
-  <video id="introVideo" autoplay muted playsinline>
-    <source src="intro.mp4" type="video/mp4">
-  </video>
-
-  <!-- Nút bật/tắt âm thanh -->
-  <button id="soundBtn" class="control-btn">🔊</button>
-
-  <!-- Nút replay -->
-  <button id="replayBtn" class="control-btn replay">⟲</button>
-</div>
-
-<script>
-  const video = document.getElementById("introVideo");
-  const soundBtn = document.getElementById("soundBtn");
-  const replayBtn = document.getElementById("replayBtn");
-
-  // Bật / tắt âm thanh
-  soundBtn.onclick = () => {
-    video.muted = !video.muted;
-    soundBtn.textContent = video.muted ? "🔇" : "🔊";
-  };
-
-  // Replay video
-  replayBtn.onclick = () => {
-    video.currentTime = 0;
-    video.play();
-  };
-</script>
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
