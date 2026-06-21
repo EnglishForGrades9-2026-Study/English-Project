@@ -13,6 +13,7 @@
    11. MINDMAP - TRANG CHỦ (card giới thiệu mindmap)
    12. MINDMAP - TRANG MINDMAP (cards + modal ảnh)
    13. DAILY TASKS (nhiệm vụ học tập + progress bar)
+   14. WED MOBILE ( Tối ưu cho điện thoại ) 
    ============================================================ */
 
 
@@ -790,4 +791,13 @@ body {
   text-align: center;
   margin-top: 30px;
   font-size: 16px;
+}
+
+/* ============================================================
+   14. WED MOBILE ( Tối ưu cho điện thoại ) 
+   ============================================================ */
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
 }
